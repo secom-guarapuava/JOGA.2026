@@ -38,10 +38,7 @@
 <header class="nav" id="nav">
   <div class="nav__inner">
     <a href="#top" class="nav__brand" aria-label="JOGA 2026 - Início">
-      <span class="nav__brand-mark" aria-hidden="true">
-        <span class="dot dot--g"></span><span class="dot dot--b"></span><span class="dot dot--y"></span>
-      </span>
-      <span class="nav__brand-text">JOGA<span>26</span></span>
+      <img src="assets/logo_mark.png" alt="JOGA 2026" class="nav__brand-logo" />
     </a>
     <nav class="nav__links" aria-label="Navegação principal">
       <a href="#sobre">Sobre</a>
@@ -72,56 +69,66 @@
 
 <!-- ========================== HERO ========================== -->
 <section class="hero" id="top">
-  <!-- Painéis multicor explosão Copa do Mundo -->
-  <div class="hero__panels" aria-hidden="true">
-    <span class="panel panel--g"></span>
-    <span class="panel panel--b"></span>
-    <span class="panel panel--y"></span>
-    <span class="panel panel--o"></span>
-    <span class="panel panel--k"></span>
-    <span class="panel panel--w"></span>
+  <!-- Cores do Brasil ao fundo -->
+  <div class="heroBR" aria-hidden="true"></div>
+
+  <!-- Bandeira do Brasil — adesivos flutuantes -->
+  <div class="brFlags" aria-hidden="true">
+    <span class="brFlag brFlag--1">
+      <svg viewBox="0 0 60 42" width="56" height="40"><rect width="60" height="42" rx="3" fill="#009C3B"/><polygon points="30,5 55,21 30,37 5,21" fill="#FFDF00"/><circle cx="30" cy="21" r="8" fill="#002776"/><path d="M22 22.5c4-2 12-2 16 .5" stroke="#fff" stroke-width="1" fill="none"/></svg>
+    </span>
+    <span class="brFlag brFlag--2">
+      <svg viewBox="0 0 60 42" width="44" height="32"><rect width="60" height="42" rx="3" fill="#009C3B"/><polygon points="30,5 55,21 30,37 5,21" fill="#FFDF00"/><circle cx="30" cy="21" r="8" fill="#002776"/></svg>
+    </span>
+    <span class="brFlag brFlag--3">
+      <svg viewBox="0 0 60 42" width="34" height="24"><rect width="60" height="42" rx="3" fill="#009C3B"/><polygon points="30,5 55,21 30,37 5,21" fill="#FFDF00"/><circle cx="30" cy="21" r="8" fill="#002776"/></svg>
+    </span>
+  </div>
+
+  <!-- Confetes coloridos chovendo (Copa do Mundo + festa) -->
+  <div class="confetti" id="confetti" aria-hidden="true"></div>
+
+  <!-- Bandeirinhas / flâmulas estilo festa -->
+  <div class="bunting" aria-hidden="true">
+    <span style="--c:var(--green)"></span>
+    <span style="--c:var(--yellow)"></span>
+    <span style="--c:var(--blue)"></span>
+    <span style="--c:#fff"></span>
+    <span style="--c:var(--green)"></span>
+    <span style="--c:var(--yellow)"></span>
+    <span style="--c:var(--blue)"></span>
+    <span style="--c:#fff"></span>
+    <span style="--c:var(--green)"></span>
+    <span style="--c:var(--yellow)"></span>
+    <span style="--c:var(--blue)"></span>
+    <span style="--c:#fff"></span>
   </div>
 
   <!-- Linhas de campo de futebol decorativas -->
   <svg class="hero__field" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-    <line x1="800" y1="0" x2="800" y2="900" stroke="rgba(255,255,255,.28)" stroke-width="3" />
-    <circle cx="800" cy="450" r="160" stroke="rgba(255,255,255,.28)" stroke-width="3" fill="none" />
-    <circle cx="800" cy="450" r="4" fill="rgba(255,255,255,.6)" />
+    <line x1="800" y1="0" x2="800" y2="900" stroke="rgba(255,255,255,.18)" stroke-width="3" />
+    <circle cx="800" cy="450" r="180" stroke="rgba(255,255,255,.18)" stroke-width="3" fill="none" />
+    <circle cx="800" cy="450" r="5" fill="rgba(255,255,255,.5)" />
   </svg>
 
-  <!-- Bandeirinhas flutuantes -->
-  <div class="flags" aria-hidden="true">
-    <span class="flag flag--g"></span>
-    <span class="flag flag--b"></span>
-    <span class="flag flag--y"></span>
-    <span class="flag flag--w"></span>
-    <span class="flag flag--k"></span>
-    <span class="flag flag--o"></span>
-  </div>
-
-  <!-- Confetes / partículas -->
-  <div class="particles" id="particles" aria-hidden="true"></div>
+  <!-- Estrelas de luz/raios decorativos -->
+  <div class="rays" aria-hidden="true"></div>
 
   <div class="hero__inner container">
-    <div class="hero__eyebrow reveal">
-      <span class="pulse"></span>
-      <span>EDIÇÃO OFICIAL · GUARAPUAVA · 19 a 27 DE OUTUBRO DE 2026</span>
-    </div>
+    <div class="hero__copy">
+      <div class="hero__eyebrow reveal">
+        <span class="pulse"></span>
+        <span>EDIÇÃO OFICIAL · GUARAPUAVA · 19 a 27 DE OUTUBRO DE 2026</span>
+      </div>
 
-    <div class="hero__logo reveal" aria-label="JOGA 2026 — Jogos dos Servidores Municipais de Guarapuava">
-      <img src="assets/logo.png" alt="JOGA 2026 — Jogos dos Servidores Municipais de Guarapuava" />
-    </div>
+      <h1 class="hero__title reveal">
+        <span class="line">É ANO DE <em>COPA.</em></span>
+        <span class="line">É ANO DE <em class="emj">JOGA.</em></span>
+      </h1>
 
-    <h1 class="hero__title reveal">
-      <span class="line">A CIDADE</span>
-      <span class="line">QUE <em>JOGA</em></span>
-      <span class="line line--accent">JUNTA.</span>
-    </h1>
-
-    <p class="hero__sub reveal">
-      Jogos dos Servidores Municipais de Guarapuava. <br>
-      Nove dias de esporte, integração e orgulho — vestindo a mesma camisa.
-    </p>
+      <p class="hero__sub reveal">
+        Guarapuava entra em campo. Nove dias de esporte, integração e orgulho — vestindo a mesma camisa: a do servidor público.
+      </p>
 
     <div class="hero__cta reveal">
       <a href="#modalidades" class="btn btn--primary" id="ctaModalidades">
@@ -145,7 +152,29 @@
       <div class="countdown__item"><div class="countdown__num" data-unit="seg">--</div><div class="countdown__label">seg</div></div>
     </div>
 
-    <!-- Marquee -->
+    </div><!-- /.hero__copy -->
+
+    <div class="hero__art reveal">
+      <div class="hero__logo" aria-label="JOGA 2026 — Jogos dos Servidores Municipais de Guarapuava">
+        <img src="assets/logo_iso.png" alt="JOGA 2026 — Jogos dos Servidores Municipais de Guarapuava" />
+      </div>
+      <!-- Carimbo decorativo "OFICIAL" -->
+      <span class="hero__stamp" aria-hidden="true">
+        <svg viewBox="0 0 120 120" width="100%" height="100%">
+          <defs>
+            <path id="stampPath" d="M60,60 m-44,0 a44,44 0 1,1 88,0 a44,44 0 1,1 -88,0"/>
+          </defs>
+          <text font-family="Anton, Impact, sans-serif" font-size="13" fill="#0E0E0E" letter-spacing="3">
+            <textPath href="#stampPath" startOffset="0">EVENTO OFICIAL · JOGA 2026 · GUARAPUAVA · </textPath>
+          </text>
+          <circle cx="60" cy="60" r="22" fill="#F2C30F" stroke="#0E0E0E" stroke-width="2"/>
+          <text x="60" y="58" text-anchor="middle" font-family="Anton, Impact, sans-serif" font-size="14" fill="#0E0E0E">2026</text>
+          <text x="60" y="71" text-anchor="middle" font-family="Inter, sans-serif" font-size="6" font-weight="800" fill="#0E0E0E" letter-spacing="2">19—27 OUT</text>
+        </svg>
+      </span>
+    </div>
+
+    <!-- Marquee full-width -->
     <div class="marquee" aria-hidden="true">
       <div class="marquee__track">
         <span>Aqui, cada servidor veste a camisa.</span><i></i>
@@ -188,8 +217,8 @@
 
 <!-- ========================== TICKER STRIP ========================== -->
 <div class="tickerStrip" aria-hidden="true">
-  <div class="tickerStrip__track">
-    <span>★ JOGA 2026</span><span>★ 19—27 OUT</span><span>★ GUARAPUAVA</span><span>★ SERVIDORES MUNICIPAIS</span><span>★ UNIÃO</span><span>★ ENERGIA</span><span>★ ESPÍRITO DE EQUIPE</span><span>★ JOGA 2026</span><span>★ 19—27 OUT</span><span>★ GUARAPUAVA</span><span>★ SERVIDORES MUNICIPAIS</span><span>★ UNIÃO</span><span>★ ENERGIA</span><span>★ ESPÍRITO DE EQUIPE</span>
+  <div class="tickerStrip__track" id="tickerTrack">
+    <!-- preenchido via JS para alternar ícones esportivos -->
   </div>
 </div>
 
@@ -198,12 +227,12 @@
   <div class="container sobre__grid">
     <div class="sobre__copy reveal">
       <p class="eyebrow">Sobre o JOGA</p>
-      <h2 class="display">Muito mais que <em>uma competição.</em><br>É um <span class="ink ink--g">encontro</span> de cidade.</h2>
+      <h2 class="display">Mais que competição.<br>É um <span class="ink ink--g">encontro</span> de cidade.</h2>
       <p class="lead">
-        O <strong>JOGA</strong> é o programa oficial de integração entre os servidores municipais de Guarapuava através do esporte. Cada modalidade é uma chance de criar laços, mover o corpo e celebrar quem faz a cidade acontecer todo dia.
+        O <strong>JOGA</strong> é o programa oficial de integração entre os servidores municipais de Guarapuava por meio do esporte. Cada modalidade é uma oportunidade de criar laços, mover o corpo e celebrar quem faz a cidade acontecer todos os dias.
       </p>
       <p>
-        Inspirados pela paixão brasileira pelo futebol e pela vibração da torcida em ano de Copa do Mundo, trouxemos cores, energia e identidade própria para os jogos internos de 2026. <strong>Moderna, vibrante, a cara do Brasil — e dos nossos servidores.</strong>
+        Em ano de Copa do Mundo, a paixão pelo futebol vira inspiração: trouxemos cores, energia e uma identidade própria para os jogos internos de 2026. <strong>Moderna, vibrante, a cara do Brasil — e dos nossos servidores.</strong>
       </p>
       <div class="stats">
         <div class="stat reveal"><div class="stat__num" data-target="12">0</div><div class="stat__lbl">modalidades</div></div>
@@ -229,7 +258,7 @@
     <div class="section__head reveal">
       <p class="eyebrow">Modalidades</p>
       <h2 class="display">12 esportes. <span class="ink ink--y">Uma só torcida.</span></h2>
-      <p class="lead">De disputas técnicas a clássicos de quadra, o JOGA 2026 reúne servidores em modalidades que celebram movimento, estratégia e parceria.</p>
+      <p class="lead">De clássicos de quadra a disputas ao ar livre, o JOGA 2026 reúne servidores em modalidades que celebram movimento, estratégia e parceria.</p>
     </div>
 
     <div class="modGrid">
@@ -353,8 +382,8 @@
   <div class="container">
     <div class="section__head reveal">
       <p class="eyebrow">Equipes</p>
-      <h2 class="display">Seis cores. <span class="ink ink--o">Uma só camisa de orgulho.</span></h2>
-      <p class="lead">Servidores são divididos por equipes coloridas que carregam, cada uma, sua bandeira, seu grito e sua história dentro do JOGA.</p>
+      <h2 class="display">Seis cores.<br><span class="ink ink--o">Um só orgulho.</span></h2>
+      <p class="lead">Os servidores se dividem em seis equipes coloridas — cada uma com sua bandeira, seu grito e seu lugar na história do JOGA.</p>
     </div>
 
     <div class="teamsGrid">
@@ -435,7 +464,7 @@
   <div class="container">
     <div class="section__head reveal">
       <p class="eyebrow">Regulamento</p>
-      <h2 class="display">As regras do <span class="ink ink--b">jogo</span> em construção.</h2>
+      <h2 class="display">As regras do <span class="ink ink--y">jogo</span>.</h2>
       <p class="lead">Em breve, todos os regulamentos oficiais por modalidade estarão disponíveis aqui — em PDF, prontos para consulta a qualquer momento.</p>
     </div>
 
@@ -472,83 +501,43 @@
   </div>
 </section>
 
-<!-- ========================== PLACARES ========================== -->
+<!-- ========================== CLASSIFICAÇÃO ========================== -->
 <section class="placares section" id="placares">
   <div class="container">
     <div class="section__head reveal">
-      <p class="eyebrow">Placares</p>
-      <h2 class="display">Cada ponto <span class="ink ink--g">tem história.</span></h2>
-      <p class="lead">Em outubro, esta página vai vibrar em tempo real com os jogos do JOGA 2026. Por enquanto, uma prévia do que vem aí.</p>
+      <p class="eyebrow">Classificação</p>
+      <h2 class="display">Cada ponto, <span class="ink ink--g">uma história.</span></h2>
+      <p class="lead">A tabela geral acompanha o desempenho de todas as equipes ao longo dos nove dias de competição. Em outubro, atualizações em tempo real.</p>
       <div class="live">
         <span class="live__dot"></span>
-        <span>EM BREVE · RESULTADOS ATUALIZADOS EM TEMPO REAL</span>
+        <span>EM BREVE · ATUALIZAÇÕES EM TEMPO REAL</span>
       </div>
     </div>
 
-    <div class="boardWrap reveal">
-
-      <div class="board board--featured">
-        <div class="board__strip">
-          <span>FUTEBOL 7 · FINAL · QUADRA CENTRAL</span>
-          <span class="board__time"><i></i> 2º TEMPO · 38'</span>
-        </div>
-        <div class="board__match">
-          <div class="board__team">
-            <div class="board__shield" style="--c:#1F4FB8"><span>A</span></div>
-            <div>
-              <p class="board__name">EQUIPE AZUL</p>
-              <p class="board__sub">Servidores · Setor A</p>
-            </div>
-          </div>
-          <div class="board__score">
-            <span class="bn" data-target="2">0</span>
-            <span class="board__dash">×</span>
-            <span class="bn" data-target="2">0</span>
-          </div>
-          <div class="board__team board__team--r">
-            <div>
-              <p class="board__name">EQUIPE LARANJA</p>
-              <p class="board__sub">Servidores · Setor B</p>
-            </div>
-            <div class="board__shield" style="--c:#E94E2C"><span>L</span></div>
-          </div>
-        </div>
-        <div class="board__bar"><div class="board__progress"></div></div>
+    <!-- Card de destaque do líder -->
+    <div class="leader reveal">
+      <div class="leader__badge">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M7 4h10v3a5 5 0 11-10 0V4zM4 6h3v1a5 5 0 003 4.58V14h-2v6h8v-6h-2v-2.42A5 5 0 0017 7V6h3v3a4 4 0 01-4 4h-.34M4 6v3a4 4 0 004 4h.34" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+        <span>LIDERANÇA · DEMONSTRATIVO</span>
       </div>
-
-      <div class="boardSmallGrid">
-        <div class="boardSmall">
-          <p class="bs__mod">VOLEIBOL · SEMI</p>
-          <div class="bs__row"><span class="bs__c" style="--c:#4DAE3F"></span><span>VERDE</span><b>3</b></div>
-          <div class="bs__row"><span class="bs__c" style="--c:#F2C30F"></span><span>AMARELO</span><b>1</b></div>
-          <p class="bs__foot">ENCERRADO</p>
+      <div class="leader__body">
+        <div class="leader__color" style="--c:#E94E2C"></div>
+        <div>
+          <h3>Equipe Laranja na liderança</h3>
+          <p>5 vitórias, 1 empate, nenhuma derrota · <strong>16 pontos</strong></p>
         </div>
-        <div class="boardSmall">
-          <p class="bs__mod">FUTSAL · OITAVAS</p>
-          <div class="bs__row"><span class="bs__c" style="--c:#0E0E0E"></span><span>PRETO</span><b>4</b></div>
-          <div class="bs__row"><span class="bs__c" style="--c:#F5F2E9;border:1px solid #111"></span><span>BRANCO</span><b>3</b></div>
-          <p class="bs__foot">ENCERRADO</p>
-        </div>
-        <div class="boardSmall">
-          <p class="bs__mod">BASQUETE 3X3</p>
-          <div class="bs__row"><span class="bs__c" style="--c:#E94E2C"></span><span>LARANJA</span><b>21</b></div>
-          <div class="bs__row"><span class="bs__c" style="--c:#1F4FB8"></span><span>AZUL</span><b>18</b></div>
-          <p class="bs__foot">ENCERRADO</p>
-        </div>
-        <div class="boardSmall boardSmall--live">
-          <p class="bs__mod"><i></i> CABO DE GUERRA</p>
-          <div class="bs__row"><span class="bs__c" style="--c:#F2C30F"></span><span>AMARELO</span><b>1</b></div>
-          <div class="bs__row"><span class="bs__c" style="--c:#4DAE3F"></span><span>VERDE</span><b>0</b></div>
-          <p class="bs__foot">AO VIVO · DEMONSTRAÇÃO</p>
-        </div>
+        <div class="leader__big">16<span>pts</span></div>
       </div>
+    </div>
 
+    <!-- Tabela de pontuação -->
+    <div class="standingsWrap reveal">
       <table class="standings">
         <thead>
-          <tr><th>#</th><th>Equipe</th><th>V</th><th>E</th><th>D</th><th>Pts</th></tr>
+          <tr><th>#</th><th>Equipe</th><th title="Vitórias">V</th><th title="Empates">E</th><th title="Derrotas">D</th><th>Pts</th></tr>
         </thead>
         <tbody>
-          <tr><td>1</td><td><span class="stand__c" style="--c:#E94E2C"></span> Laranja</td><td>5</td><td>1</td><td>0</td><td>16</td></tr>
+          <tr class="is-leader"><td>1</td><td><span class="stand__c" style="--c:#E94E2C"></span> Laranja <span class="stand__chip">Liderando</span></td><td>5</td><td>1</td><td>0</td><td>16</td></tr>
           <tr><td>2</td><td><span class="stand__c" style="--c:#4DAE3F"></span> Verde</td><td>4</td><td>1</td><td>1</td><td>13</td></tr>
           <tr><td>3</td><td><span class="stand__c" style="--c:#1F4FB8"></span> Azul</td><td>3</td><td>2</td><td>1</td><td>11</td></tr>
           <tr><td>4</td><td><span class="stand__c" style="--c:#F2C30F"></span> Amarelo</td><td>2</td><td>2</td><td>2</td><td>8</td></tr>
@@ -570,7 +559,7 @@
   <div class="container">
     <div class="section__head reveal">
       <p class="eyebrow">Retrospectiva</p>
-      <h2 class="display">Confira como foi o <span class="ink ink--y">JOGA 2025</span>.</h2>
+      <h2 class="display">Como foi o <span class="ink ink--y">JOGA 2025</span>.</h2>
       <p class="lead">Reveja a emoção, a vibração e o orgulho que tomaram conta de Guarapuava na última edição.</p>
     </div>
 
@@ -610,11 +599,11 @@
     <div class="reveal">
       <p class="eyebrow eyebrow--light">Prepare-se</p>
       <h2 class="display display--light">
-        <span class="line">Em 2026, a torcida</span>
+        <span class="line">A torcida</span>
         <span class="line">é de <em>todos nós.</em></span>
       </h2>
       <p class="lead lead--light">
-        Aqui, cada servidor veste a camisa. Cada jogo é um abraço entre departamentos. Cada conquista, uma vitória da nossa cidade.
+        Cada servidor veste a camisa. Cada jogo, um abraço entre departamentos. Cada conquista, uma vitória da nossa cidade.
       </p>
       <div class="ctaFinal__buttons">
         <a href="#" class="btn btn--big btn--white" aria-disabled="true" onclick="event.preventDefault();this.classList.add('shake');setTimeout(()=>this.classList.remove('shake'),600);">
@@ -628,7 +617,25 @@
       <p class="ctaFinal__small">As inscrições serão abertas em breve. Em caso de dúvidas, procure a Secretaria Municipal de Comunicação.</p>
     </div>
     <div class="ctaFinal__art" aria-hidden="true">
-      <div class="ctaFinal__ball"></div>
+      <!-- Bola de vôlei -->
+      <svg class="ctaFinal__ball" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="vbg" cx="35%" cy="32%" r="68%">
+            <stop offset="0%" stop-color="#ffffff"/>
+            <stop offset="70%" stop-color="#f1efe6"/>
+            <stop offset="100%" stop-color="#cfcbbd"/>
+          </radialGradient>
+        </defs>
+        <circle cx="110" cy="110" r="100" fill="url(#vbg)" stroke="#0E0E0E" stroke-width="3"/>
+        <!-- 3 curvas características da bola de vôlei -->
+        <path d="M110 10 C 30 60, 30 160, 110 210" fill="none" stroke="#0E0E0E" stroke-width="3"/>
+        <path d="M110 10 C 190 60, 190 160, 110 210" fill="none" stroke="#0E0E0E" stroke-width="3"/>
+        <path d="M14 78 C 80 110, 140 110, 206 78" fill="none" stroke="#0E0E0E" stroke-width="3"/>
+        <path d="M14 142 C 80 110, 140 110, 206 142" fill="none" stroke="#0E0E0E" stroke-width="3"/>
+        <!-- Linhas secundárias finas -->
+        <path d="M65 22 C 55 70, 55 150, 65 198" fill="none" stroke="#0E0E0E" stroke-width="1.2" opacity=".5"/>
+        <path d="M155 22 C 165 70, 165 150, 155 198" fill="none" stroke="#0E0E0E" stroke-width="1.2" opacity=".5"/>
+      </svg>
       <div class="ctaFinal__streak"></div>
     </div>
   </div>

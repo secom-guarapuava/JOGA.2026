@@ -82,17 +82,6 @@
     requestAnimationFrame(step);
   }
 
-  /* -------- Placares: contador nos dois lados do board destaque -------- */
-  const bnIO = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (!e.isIntersecting) return;
-      const el = e.target;
-      const target = parseInt(el.getAttribute('data-target'), 10);
-      animateNumber(el, target, 1100);
-      bnIO.unobserve(el);
-    });
-  }, { threshold: 0.5 });
-  $$('.bn').forEach(b => bnIO.observe(b));
 
   /* -------- Countdown (até 19 de outubro de 2026, 08:00 -03) -------- */
   const targetDate = new Date('2026-10-19T08:00:00-03:00');
@@ -118,25 +107,49 @@
   updateCountdown();
   setInterval(updateCountdown, 1000);
 
-  /* -------- Partículas do hero (confetes/luzes) -------- */
-  const particles = $('#particles');
-  if (particles && !prefersReduced) {
-    const colors = ['#FFFFFF','#F2C30F','#4DAE3F','#FFFFFF','#FFFFFF','#F2C30F'];
-    const N = 22;
+  /* -------- Confetes coloridos chovendo no hero -------- */
+  const confetti = $('#confetti');
+  if (confetti && !prefersReduced) {
+    const colors = ['#4DAE3F','#F2C30F','#1F4FB8','#FFFFFF','#E94E2C','#0E0E0E','#FFFFFF','#F2C30F','#4DAE3F'];
+    const N = 60;
     for (let i = 0; i < N; i++) {
-      const p = document.createElement('span');
-      p.className = 'p';
-      const size = 4 + Math.random() * 8;
-      p.style.width = size + 'px';
-      p.style.height = size + 'px';
-      p.style.left = (Math.random() * 100) + '%';
-      p.style.top  = (Math.random() * 100) + '%';
-      p.style.background = colors[i % colors.length];
-      p.style.animationDuration = (7 + Math.random() * 8) + 's';
-      p.style.animationDelay = (-Math.random() * 10) + 's';
-      p.style.opacity = String(0.6 + Math.random() * 0.4);
-      particles.appendChild(p);
+      const c = document.createElement('span');
+      c.className = 'cnf';
+      const w = 6 + Math.random() * 8;
+      const h = 10 + Math.random() * 10;
+      c.style.width  = w + 'px';
+      c.style.height = h + 'px';
+      c.style.left = (Math.random() * 100) + '%';
+      c.style.top  = (-20 - Math.random() * 40) + 'vh';
+      c.style.background = colors[i % colors.length];
+      c.style.animationDuration = (6 + Math.random() * 8) + 's';
+      c.style.animationDelay = (-Math.random() * 10) + 's';
+      c.style.setProperty('--dx', ((Math.random() - 0.5) * 240) + 'px');
+      // alguns confetes em forma de círculo
+      if (i % 7 === 0) c.style.borderRadius = '50%';
+      confetti.appendChild(c);
     }
+  }
+
+  /* -------- Ticker com ícones esportivos -------- */
+  const tickerTrack = $('#tickerTrack');
+  if (tickerTrack) {
+    const words = ['JOGA 2026','19 — 27 OUT','GUARAPUAVA','SERVIDORES MUNICIPAIS','UNIÃO','ENERGIA','ESPÍRITO DE EQUIPE'];
+    // SVG ícones de esporte (bola, troféu, raquete, apito, medalha, chuteira)
+    const icons = [
+      '<svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><polygon points="12,5 16,8 14.5,13 9.5,13 8,8" /></svg>',
+      '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4h10v3a5 5 0 11-10 0V4zm-3 2h3v1a5 5 0 002 4v2H7v6h10v-6h-2v-2a5 5 0 002-4V6h3v3a4 4 0 01-4 4h-1m-8-4h1a4 4 0 01-4-4V6z"/></svg>',
+      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="10" cy="10" rx="6" ry="7" transform="rotate(-30 10 10)"/><line x1="14" y1="14" x2="20" y2="20" stroke-linecap="round" stroke-width="3"/></svg>',
+      '<svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 4v16M4 12h16M6 6c4 4 4 8 0 12M18 6c-4 4-4 8 0 12" fill="none" stroke="currentColor" stroke-width="2"/></svg>',
+      '<svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="14" r="6" fill="none" stroke="currentColor" stroke-width="2"/><path d="M9 8l2-5h2l2 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>',
+      '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 14l4-1 3-3 6-1 4 2v3H8l-3 2H3z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>'
+    ];
+    // Construir o conteúdo (2x para o loop infinito)
+    const buildBlock = () => words.map((w,i)=>{
+      const icon = icons[i % icons.length];
+      return `<span class="tk-icon" aria-hidden="true">${icon}</span><span class="tk-word"><span class="tk-text">${w}</span></span>`;
+    }).join('');
+    tickerTrack.innerHTML = buildBlock() + buildBlock();
   }
 
   /* -------- Vídeo play overlay -------- */
