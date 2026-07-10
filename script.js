@@ -107,26 +107,23 @@
   updateCountdown();
   setInterval(updateCountdown, 1000);
 
-  /* -------- Confetes coloridos chovendo no hero -------- */
+  /* -------- Faíscas de energia subindo no hero -------- */
   const confetti = $('#confetti');
   if (confetti && !prefersReduced) {
-    const colors = ['#4DAE3F','#F2C30F','#1F4FB8','#FFFFFF','#E94E2C','#0E0E0E','#FFFFFF','#F2C30F','#4DAE3F'];
-    const N = 60;
+    const colors = ['#F2C30F','#FFE985','#FFFFFF','#E94E2C','#F2C30F','#7FA3FF','#FFFFFF','#F2C30F'];
+    const N = 46;
     for (let i = 0; i < N; i++) {
       const c = document.createElement('span');
       c.className = 'cnf';
-      const w = 6 + Math.random() * 8;
-      const h = 10 + Math.random() * 10;
-      c.style.width  = w + 'px';
-      c.style.height = h + 'px';
+      const s = 3 + Math.random() * 5;
+      c.style.width  = s + 'px';
+      c.style.height = s + 'px';
       c.style.left = (Math.random() * 100) + '%';
-      c.style.top  = (-20 - Math.random() * 40) + 'vh';
-      c.style.background = colors[i % colors.length];
-      c.style.animationDuration = (6 + Math.random() * 8) + 's';
-      c.style.animationDelay = (-Math.random() * 10) + 's';
-      c.style.setProperty('--dx', ((Math.random() - 0.5) * 240) + 'px');
-      // alguns confetes em forma de círculo
-      if (i % 7 === 0) c.style.borderRadius = '50%';
+      c.style.top  = (60 + Math.random() * 60) + 'vh';
+      c.style.color = colors[i % colors.length];
+      c.style.animationDuration = (5 + Math.random() * 9) + 's';
+      c.style.animationDelay = (-Math.random() * 12) + 's';
+      c.style.setProperty('--dx', ((Math.random() - 0.5) * 180) + 'px');
       confetti.appendChild(c);
     }
   }
@@ -134,7 +131,7 @@
   /* -------- Ticker com ícones esportivos -------- */
   const tickerTrack = $('#tickerTrack');
   if (tickerTrack) {
-    const words = ['JOGA 2026','19 — 27 OUT','GUARAPUAVA','SERVIDORES MUNICIPAIS','UNIÃO','ENERGIA','ESPÍRITO DE EQUIPE'];
+    const words = ['JOGA 2026','ENERGIA PARA SERVIR','DISPOSIÇÃO PARA JOGAR','19 — 27 OUT','GUARAPUAVA','SERVIDORES MUNICIPAIS','O SEU MOVIMENTO FAZ A DIFERENÇA','ESPÍRITO DE EQUIPE'];
     // SVG ícones de esporte (bola, troféu, raquete, apito, medalha, chuteira)
     const icons = [
       '<svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><polygon points="12,5 16,8 14.5,13 9.5,13 8,8" /></svg>',
