@@ -70,29 +70,38 @@
   $$('.stat').forEach(s => statIO.observe(s));
 
   function animateNumber(el, target, dur = 1200, suffix = '') {
-    if (prefersReduced) { el.textContent = target + suffix; return; }
+    if (prefersReduced) { el.textContent = target.toLocaleString('pt-BR') + suffix; return; }
     const start = performance.now();
     const from = 0;
     const step = (t) => {
       const p = Math.min(1, (t - start) / dur);
       const eased = 1 - Math.pow(1 - p, 3);
-      el.textContent = Math.round(from + (target - from) * eased) + suffix;
+      el.textContent = Math.round(from + (target - from) * eased).toLocaleString('pt-BR') + suffix;
       if (p < 1) requestAnimationFrame(step);
     };
     requestAnimationFrame(step);
   }
 
 
-  /* -------- Countdown (até 19 de outubro de 2026, 08:00 -03) -------- */
-  const targetDate = new Date('2026-10-19T08:00:00-03:00');
+  /* -------- Countdown (até 26 de outubro de 2026, 08:00 -03) -------- */
+  const targetDate = new Date('2026-10-26T08:00:00-03:00');
   const cdNodes = {
     dias: $('[data-unit="dias"]'),
     horas: $('[data-unit="horas"]'),
     min: $('[data-unit="min"]'),
     seg: $('[data-unit="seg"]'),
   };
+  const endDate = new Date('2026-11-14T23:59:59-03:00');
+  const cdBox = $('#countdown');
+  let cdTimer;
+  const cdMsg = (txt) => {
+    if (cdBox) { cdBox.innerHTML = '<div class="countdown__live"><span class="pulse"></span><span>' + txt + '</span></div>'; cdBox.setAttribute('aria-label', txt); }
+    clearInterval(cdTimer);
+  };
   const updateCountdown = () => {
     const now = new Date();
+    if (now >= endDate) return cdMsg('JOGA 2026 · edição encerrada');
+    if (now >= targetDate) return cdMsg('O JOGA 2026 já começou · até 14.11');
     let diff = Math.max(0, targetDate - now);
     const sec = 1000, min = 60*sec, hour = 60*min, day = 24*hour;
     const d = Math.floor(diff / day); diff -= d*day;
@@ -105,7 +114,7 @@
     if (cdNodes.seg)   cdNodes.seg.textContent   = String(s).padStart(2,'0');
   };
   updateCountdown();
-  setInterval(updateCountdown, 1000);
+  cdTimer = setInterval(updateCountdown, 1000);
 
   /* -------- Faíscas de energia subindo no hero -------- */
   const confetti = $('#confetti');
@@ -131,7 +140,7 @@
   /* -------- Ticker com ícones esportivos -------- */
   const tickerTrack = $('#tickerTrack');
   if (tickerTrack) {
-    const words = ['JOGA 2026','ENERGIA PARA SERVIR','DISPOSIÇÃO PARA JOGAR','19 — 27 OUT','GUARAPUAVA','SERVIDORES MUNICIPAIS','O SEU MOVIMENTO FAZ A DIFERENÇA','ESPÍRITO DE EQUIPE'];
+    const words = ['JOGA 2026','ENERGIA PARA SERVIR','DISPOSIÇÃO PARA JOGAR','26.10 — 14.11','GUARAPUAVA','SERVIDORES MUNICIPAIS','O SEU MOVIMENTO FAZ A DIFERENÇA','ESPÍRITO DE EQUIPE'];
     // SVG ícones de esporte (bola, troféu, raquete, apito, medalha, chuteira)
     const icons = [
       '<svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><polygon points="12,5 16,8 14.5,13 9.5,13 8,8" /></svg>',

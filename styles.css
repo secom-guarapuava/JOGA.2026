@@ -1058,3 +1058,104 @@ button{border:none;background:none;cursor:pointer;font:inherit;color:inherit}
 
 /* ---------- A11y / focus ---------- */
 :focus-visible{outline:3px solid var(--yellow);outline-offset:3px;border-radius:6px}
+
+/* ============================================================
+   ATUALIZAÇÃO 05/10/2026 — media kit, palestra e 23 modalidades
+   ============================================================ */
+
+/* nav: link do media kit em destaque (o link saiu em 22/10; o menu volta a caber acima de 1100px) */
+.nav__links a,.nav__cta{white-space:nowrap}
+.nav__links a.nav__kit{color:var(--yellow);border:1px solid rgba(242,195,15,.55);border-radius:999px;padding:6px 12px}
+.nav__links a.nav__kit::after{display:none}
+.nav__links a.nav__kit:hover{background:var(--yellow);color:#111}
+@media(max-width:1100px){
+  .nav__links,.nav__cta{display:none}
+  .nav__burger{display:block}
+}
+
+/* modalidades: 23 cards, cor = bloco */
+.modLegend{display:flex;flex-wrap:wrap;gap:10px;margin:-18px 0 26px}
+.modLegend__i{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:8px 14px;border-radius:999px;background:var(--cream);border:1px solid rgba(0,0,0,.08)}
+.modLegend__i i{width:12px;height:12px;border-radius:50%;background:var(--c)}
+.modLegend__i b{font-family:var(--fDisp);font-weight:400;font-size:15px;color:var(--muted)}
+.modLegend__i--b{--c:var(--blue)}
+.modLegend__i--g{--c:var(--green)}
+.modLegend__i--o{--c:var(--orange)}
+.modLegend__i--y{--c:var(--yellow)}
+.modLegend__i--k{--c:var(--black)}
+.modGrid--23{gap:14px}
+.mod--sm{min-height:178px;padding:22px;border-radius:20px}
+.mod--sm .mod__icon{width:52px;height:52px}
+.mod--sm h3{font-size:clamp(20px,2vw,26px);margin-top:14px}
+.mod--sm .mod__num{font-size:40px}
+.mod--k{background:var(--black)}
+@media(max-width:420px){
+  .modGrid--23{grid-template-columns:repeat(2,1fr);gap:10px}
+  .mod--sm{min-height:142px;padding:16px;border-radius:16px}
+  .mod--sm .mod__icon{width:38px;height:38px}
+  .mod--sm h3{font-size:19px;margin-top:10px}
+  .mod--sm p{font-size:12px}
+  .mod--sm .mod__num{font-size:28px;right:10px;top:8px}
+}
+
+/* palestra — Flavio Canto */
+.talkSec{
+  color:#fff;overflow:hidden;isolation:isolate;
+  background:
+    radial-gradient(900px 600px at 92% 6%, rgba(233,78,44,.30) 0%, transparent 60%),
+    radial-gradient(900px 640px at 4% 98%, rgba(31,79,184,.48) 0%, transparent 62%),
+    radial-gradient(700px 500px at 50% 50%, rgba(242,195,15,.08) 0%, transparent 62%),
+    linear-gradient(160deg,#0b1030 0%,#131b3f 55%,#0d0d18 100%);
+}
+.talkSec::after{
+  content:"";position:absolute;inset:0;pointer-events:none;z-index:0;opacity:.16;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='400'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.6' numOctaves='3' seed='9'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .35 0'/></filter><rect width='400' height='400' filter='url(%23n)'/></svg>");
+}
+.talkSec .container{position:relative;z-index:1}
+.talkSec .eyebrow{color:var(--yellow)}
+.talkSec .eyebrow::before{background:var(--yellow)}
+.talkSec .display{font-size:clamp(32px,4.2vw,58px);line-height:1.04}
+.talk{display:grid;grid-template-columns:minmax(260px,.74fr) 1.26fr;gap:clamp(28px,4.4vw,68px);align-items:center}
+.talk__img{margin:0;border-radius:24px;overflow:hidden;aspect-ratio:1000/1778;background:#0e0c0b;border:1px solid rgba(255,255,255,.14);box-shadow:0 34px 60px -30px rgba(0,0,0,.75)}
+.talk__img img{width:100%;height:100%;object-fit:cover}
+.talk__stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:30px}
+.tstat{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);border-top:4px solid var(--accent);border-radius:16px;padding:16px 16px 15px}
+.tstat b{display:block;font-family:var(--fDisp);font-weight:400;font-size:clamp(30px,3vw,40px);line-height:1;color:var(--accent);white-space:nowrap}
+.tstat span{display:block;font-size:12.5px;font-weight:600;color:rgba(255,255,255,.82);margin-top:8px;line-height:1.35}
+.cs3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:22px}
+.cs3__i{display:flex;gap:12px;align-items:center;background:#fff;color:var(--ink);border-radius:16px;padding:14px 16px;border-top:4px solid var(--accent)}
+.cs3__n{flex:0 0 34px;height:34px;border-radius:50%;background:var(--accent);color:#fff;font-family:var(--fDisp);font-size:18px;display:grid;place-items:center}
+.cs3__i b{display:block;font-family:var(--fDisp);font-weight:400;font-size:19px;text-transform:uppercase;line-height:1.05}
+.cs3__i p{font-size:13px;color:#444;line-height:1.35;margin-top:3px}
+.talk__quote{margin:24px 0 0;position:relative;padding:20px 24px 18px 66px;background:rgba(0,0,0,.26);border:1px solid rgba(255,255,255,.12);border-left:4px solid var(--orange);border-radius:16px}
+.talk__quote::before{content:"\201C";position:absolute;left:18px;top:8px;font-family:var(--fDisp);font-size:64px;line-height:1;color:var(--orange)}
+.talk__quote p{font-family:var(--fDisp);font-size:clamp(18px,1.7vw,23px);line-height:1.22;text-transform:uppercase;letter-spacing:.005em}
+.talk__quote cite{display:block;margin-top:9px;font-style:normal;font-size:11.5px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--yellow)}
+@media(max-width:1100px){.talk__stats{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:900px){.talk{grid-template-columns:1fr}.talk__img{max-width:320px;width:100%;margin:0 auto}}
+@media(max-width:640px){.cs3{grid-template-columns:1fr}}
+
+/* CTA final: link do media kit */
+.ctaFinal__kit{margin-top:18px;font-size:14px;color:rgba(255,255,255,.82)}
+.ctaFinal__kit a{color:var(--yellow);font-weight:700;border-bottom:1px solid rgba(242,195,15,.5)}
+.ctaFinal__kit a:hover{border-bottom-color:var(--yellow)}
+
+/* ============================================================
+   ATUALIZAÇÃO 22/10/2026 — 21 modalidades, sem palestra e sem media kit,
+   classificação zerada, aviso no lugar da contagem quando o JOGA começa
+   ============================================================ */
+.countdown__live{display:inline-flex;align-items:center;gap:12px;padding:14px 22px;border-radius:999px;
+  background:rgba(0,0,0,.22);border:1px solid rgba(255,255,255,.3);backdrop-filter:blur(6px);
+  font-family:var(--fDisp);font-size:clamp(20px,2.4vw,28px);letter-spacing:.03em;text-transform:uppercase;line-height:1}
+.mod--info{grid-column:span 3;background:var(--cream);color:#111;border:2px dashed rgba(0,0,0,.22);box-shadow:none;cursor:default;justify-content:flex-end}
+.mod--info::before{display:none}
+.mod--info:hover{transform:none;box-shadow:none}
+.mod--info h3{color:#111;margin-top:0}
+.mod--info p{color:#333;font-size:15px;max-width:52ch;margin-top:8px;line-height:1.45}
+@media(max-width:760px){
+  .mod--info{grid-column:span 1;padding:16px}
+  .mod--info h3{font-size:19px}
+  .mod--info p{font-size:12px;line-height:1.4}
+}
+.ctaFinal__small a{color:var(--yellow);font-weight:700;border-bottom:1px solid rgba(242,195,15,.5)}
+.ctaFinal__small a:hover{border-bottom-color:var(--yellow)}
