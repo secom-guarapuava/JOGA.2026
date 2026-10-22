@@ -1359,3 +1359,18 @@ html.mdl-open{overflow:hidden}
 .mdl__step{display:inline-flex;align-items:center;gap:8px;background:var(--black);color:#fff;font-weight:700;font-size:14px;padding:10px 16px;border-radius:999px}
 .mdl__step:hover{background:var(--orange)}
 .mdl__step svg{width:16px;height:16px}
+
+/* =========================================================
+   ATUALIZAÇÃO 22/10/2026 (6ª) — apoiadores
+   ========================================================= */
+.apoio{background:#fff}
+.apoio .section__head{text-align:center;margin-left:auto;margin-right:auto}
+.apoio .eyebrow{justify-content:center}
+.apoio__grid{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;justify-content:center;gap:20px}
+.apoio__item{flex:0 1 300px;height:170px;display:flex;align-items:center;justify-content:center;padding:30px 36px;background:#fff;border:1.5px solid rgba(14,14,14,.12);border-radius:22px;transition:transform .2s,box-shadow .2s}
+.apoio__item:hover{transform:translateY(-3px);box-shadow:0 14px 30px -18px rgba(0,0,0,.35)}
+.apoio__item img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain}
+@media (max-width:640px){
+  .apoio__grid{gap:12px}
+  .apoio__item{flex:0 1 calc(50% - 6px);height:120px;padding:20px}
+}
