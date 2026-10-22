@@ -5,6 +5,7 @@
    ============================================================ */
 (() => {
   const INSCRICAO = 'https://inscricoesgdc.com.br/?param=7288';
+  const WPP = 'https://chat.whatsapp.com/GyE0cGUtcu2523b2oBeTil';
   const REGULAMENTO = 'docs/regulamento-joga-2026.pdf';
   const TERMO = 'docs/termo-de-responsabilidade-joga-2026.pdf';
   const INSTA = 'https://www.instagram.com/joga26_pref/';
@@ -173,7 +174,7 @@
     pin: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="2.6" fill="currentColor"/></svg>',
     arrow: '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>',
   };
-  const AVISO = `<p class="mdl__notice"><b>Aviso importante:</b> confira sempre as informações no site oficial do JOGA, no Instagram <a href="${INSTA}" target="_blank" rel="noopener">@joga26_pref</a> ou com os coordenadores. Ficou com dúvida? Procure o coordenador da sua equipe.</p>`;
+  const AVISO = `<p class="mdl__notice"><b>Aviso importante:</b> confira sempre as informações no site oficial do JOGA, no Instagram <a href="${INSTA}" target="_blank" rel="noopener">@joga26_pref</a>, no <a href="${WPP}" target="_blank" rel="noopener">grupo do WhatsApp</a> ou com os coordenadores. Ficou com dúvida? Procure o coordenador da sua equipe.</p>`;
 
   /* ---------------- janela ---------------- */
   const box = document.createElement('div');
