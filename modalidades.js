@@ -138,7 +138,8 @@
         'Critérios da dança (0 a 10 cada): fidelidade ao tema, coreografia e criatividade, sincronia e execução, animação e presença de palco, caracterização e figurino.',
         '<b>Talento Escondido:</b> uma apresentação por equipe, de até 4 minutos, com um ou mais servidores: música, dança, imitação, humor, mágica, poesia, instrumento musical e o que mais aparecer.',
         'Critérios do talento (0 a 10 cada): criatividade, desenvoltura, originalidade, execução e interação com o público.',
-        'As notas dos jurados nas duas provas são somadas para a classificação final.'],
+        'As notas dos jurados nas duas provas são somadas para a classificação final.',
+        '<b>Ingressos limitados:</b> ficam com o coordenador de cada equipe, que organiza a distribuição conforme as orientações do Congresso Técnico. Procure o coordenador da sua equipe.'],
       pts: 'Ranking geral: 1º lugar 10 pontos · 2º 6 · 3º 4 · 4º 3 · 5º 2 · 6º 1.' },
     'Cerimônia de Abertura': { b: 'e', ev: true, tags: ['Todas as equipes', 'Presença obrigatória'], quando: '28/10 (quarta-feira), às 19h', onde: 'Ginásio Joaquim Prestes',
       resumo: 'A noite em que as seis equipes entram juntas em quadra. Presença obrigatória para todas as equipes.',
@@ -174,6 +175,7 @@
     pin: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="2.6" fill="currentColor"/></svg>',
     arrow: '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>',
   };
+  const INSC = `<div class="mdl__insc"><p><b>Como se inscrever:</b> procure o <b>coordenador da sua equipe</b>. É ele quem faz a inscrição no sistema oficial, até domingo, 25 de outubro.</p><a class="mdl__step" href="#inscricao" data-close>Ver o passo a passo ${IC.arrow}</a></div>`;
   const AVISO = `<p class="mdl__notice"><b>Aviso importante:</b> confira sempre as informações no site oficial do JOGA, no Instagram <a href="${INSTA}" target="_blank" rel="noopener">@joga26_pref</a>, no <a href="${WPP}" target="_blank" rel="noopener">grupo do WhatsApp</a> ou com os coordenadores. Ficou com dúvida? Procure o coordenador da sua equipe.</p>`;
 
   /* ---------------- janela ---------------- */
@@ -189,13 +191,13 @@
       const rows = AGENDA.map(([d, w, it]) => `<li class="ag"><div class="ag__d"><b>${d}</b><span>${w}</span></div><div class="ag__it">${it.map(([a, l]) => `<p><b>${a}</b>${l ? `<span>${l}</span>` : ''}</p>`).join('')}</div></li>`).join('');
       return `<div class="mdl__head" style="--c:#E94E2C"><p class="mdl__k">JOGA 2026 · 26 de outubro a 14 de novembro</p><h3 id="mdlTitle">Programação completa</h3></div>
         <div class="mdl__body"><ul class="agenda">${rows}</ul><p class="mdl__small">Datas e locais do cronograma oficial; as tabelas e horários de cada jogo saem nas notas oficiais da organização.</p></div>
-        <div class="mdl__foot"><a class="btn btn--primary mdl__go" href="${INSCRICAO}" target="_blank" rel="noopener"><span>Inscreva-se</span>${IC.arrow}</a>${AVISO}</div>`;
+        <div class="mdl__foot">${INSC}${AVISO}</div>`;
     }
     const d = M[key]; const [bn, bc] = BLOCO[d.b];
     const tags = d.tags.map(t => `<span>${t}</span>`).join('');
     const itens = d.itens.map(t => `<li>${t}</li>`).join('');
     const pts = d.pts ? `<div class="mdl__pts"><b>Pontuação</b><p>${d.pts}</p></div>` : '';
-    const go = d.ev ? '' : `<a class="btn btn--primary mdl__go" href="${INSCRICAO}" target="_blank" rel="noopener"><span>Inscreva-se</span>${IC.arrow}</a>`;
+    const go = d.ev ? '' : INSC;
     const quem = d.ev ? '' : `<p class="mdl__who">${d.quem || QUEM}</p>`;
     return `<div class="mdl__head" style="--c:${bc}"><p class="mdl__k">${d.ev ? 'Destaque da programação' : 'Modalidade · ' + bn}</p><h3 id="mdlTitle">${key}</h3><div class="mdl__tags">${tags}</div></div>
       <div class="mdl__meta"><p>${IC.cal}<span><b>Quando</b>${d.quando}</span></p><p>${IC.pin}<span><b>Onde</b>${d.onde}</span></p></div>
@@ -218,7 +220,18 @@
     if (location.hash.startsWith('#mod-')) history.replaceState(null, '', location.pathname + location.search);
     if (lastFocus) lastFocus.focus({ preventScroll: true });
   };
-  box.addEventListener('click', e => { if (e.target.closest('[data-close]')) close(); });
+  const goTo = id => {
+    const t = document.querySelector(id); if (!t) return;
+    if (t.tagName === 'DETAILS') t.open = true;
+    const top = t.getBoundingClientRect().top + window.scrollY - 70;
+    window.scrollTo({ top, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+  };
+  box.addEventListener('click', e => {
+    const c = e.target.closest('[data-close]'); if (!c) return;
+    const href = c.getAttribute('href');
+    if (href && href.startsWith('#') && href.length > 1) { e.preventDefault(); close(); setTimeout(() => goTo(href), 30); }
+    else close();
+  });
   document.addEventListener('keydown', e => {
     if (box.hidden) return;
     if (e.key === 'Escape') close();
@@ -234,7 +247,7 @@
   document.querySelectorAll('.mod[data-mod]').forEach(card => {
     const key = card.dataset.mod; if (!(key in M)) return;
     card.setAttribute('role', 'button'); card.setAttribute('tabindex', '0'); card.setAttribute('aria-haspopup', 'dialog');
-    card.setAttribute('aria-label', key + ': ver regras e inscrição');
+    card.setAttribute('aria-label', key + ': ver regras');
     const more = document.createElement('span'); more.className = 'mod__more'; more.textContent = 'Ver regras +';
     (card.querySelector(':scope > div:not(.mod__icon)') || card).appendChild(more);
     card.addEventListener('click', () => open(key));
@@ -245,4 +258,12 @@
   const fromHash = () => { const k = SLUGS[location.hash.slice(1)]; if (k) open(k, false); };
   window.addEventListener('hashchange', fromHash);
   fromHash();
+
+  document.addEventListener('click', e => {
+    const a = e.target.closest('a[href^="#faq-"]'); if (!a) return;
+    const t = document.querySelector(a.getAttribute('href')); if (t && t.tagName === 'DETAILS') t.open = true;
+  }, true);
+  const faqHash = () => { const el = document.getElementById(location.hash.slice(1)); if (el && el.tagName === 'DETAILS') el.open = true; };
+  window.addEventListener('hashchange', faqHash);
+  faqHash();
 })();

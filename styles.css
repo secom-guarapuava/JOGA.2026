@@ -1290,3 +1290,72 @@ html.mdl-open{overflow:hidden}
   .wpp__ic svg{width:32px;height:32px}
   .wpp__p{font-size:16px}
 }
+
+/* =========================================================
+   ATUALIZAÇÃO 22/10/2026 (4ª) — prazo das inscrições + Dúvidas (FAQ)
+   ========================================================= */
+@media (max-width:1280px){.nav__links{gap:20px}}
+.hero__prazo{display:flex;align-items:center;gap:10px;margin:16px 0 0;font-size:15px;font-weight:600;color:rgba(255,255,255,.92)}
+.hero__prazo .pulse{flex:0 0 auto}
+.ctaFinal__small b{font-weight:800}
+
+.faq{background:#fff;position:relative}
+.faq__grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(28px,5vw,72px);align-items:start}
+.faq__side{position:sticky;top:110px}
+.faq__side .section__head{margin-bottom:28px}
+.faq__help{background:var(--cream);border:2px solid var(--black);border-radius:var(--radius);padding:24px 26px;box-shadow:6px 6px 0 var(--green)}
+.faq__helpK{font-family:var(--fDisp);font-size:24px;text-transform:uppercase;margin:0 0 6px;letter-spacing:.01em}
+.faq__help p{margin:0 0 16px;line-height:1.5}
+.faq__helpBtn{background:var(--black);color:#fff;padding:13px 20px}
+.faq__helpBtn:hover{background:var(--green);color:var(--black)}
+.faq__g + .faq__g{margin-top:34px}
+.faq__gt{font-family:var(--fBody);font-size:13px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--orange);margin:0 0 10px}
+.faq__q{border-bottom:1.5px solid rgba(14,14,14,.12)}
+.faq__q:first-of-type{border-top:1.5px solid rgba(14,14,14,.12)}
+.faq__q summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:18px 2px;font-weight:700;font-size:17px;line-height:1.35}
+.faq__q summary::-webkit-details-marker{display:none}
+.faq__q summary:hover span{color:var(--blue)}
+.faq__q summary:focus-visible{outline:3px solid var(--yellow);outline-offset:2px;border-radius:6px}
+.faq__pm{flex:0 0 30px;height:30px;border-radius:50%;background:var(--cream);border:1.5px solid rgba(14,14,14,.18);position:relative;transition:background .2s,transform .25s}
+.faq__pm::before,.faq__pm::after{content:"";position:absolute;left:50%;top:50%;width:12px;height:2px;background:var(--black);transform:translate(-50%,-50%);transition:transform .25s}
+.faq__pm::after{transform:translate(-50%,-50%) rotate(90deg)}
+.faq__q[open] .faq__pm{background:var(--green);border-color:var(--green)}
+.faq__q[open] .faq__pm::after{transform:translate(-50%,-50%) rotate(0deg)}
+.faq__a{padding:0 2px 20px;color:#2a2a2a;font-size:16px;line-height:1.6;max-width:68ch}
+.faq__a p{margin:0 0 10px}
+.faq__a p:last-child{margin-bottom:0}
+.faq__a a{font-weight:700;color:var(--blue);border-bottom:1px solid currentColor;word-break:break-word}
+.faq__teams{list-style:none;margin:8px 0 0;padding:0;display:grid;gap:10px}
+.faq__teams li{display:flex;gap:12px;align-items:flex-start}
+.faq__teams i{flex:0 0 14px;height:14px;margin-top:5px;border-radius:50%;background:var(--c);border:1.5px solid rgba(14,14,14,.35)}
+@media (max-width:900px){
+  .faq__grid{grid-template-columns:1fr}
+  .faq__side{position:static}
+}
+@media (max-width:520px){
+  .faq__q summary{font-size:16px;padding:16px 0}
+  .faq__a{font-size:15px}
+  .faq__help{padding:20px}
+}
+
+/* =========================================================
+   ATUALIZAÇÃO 22/10/2026 (5ª) — inscrição pelo coordenador: "Como se inscrever"
+   ========================================================= */
+@media (max-width:1180px){
+  .nav__links,.nav__cta{display:none}
+  .nav__burger{display:block}
+}
+.hero__prazo b{font-weight:800;color:#fff}
+.steps{list-style:none;counter-reset:st;margin:22px 0 4px;padding:0;display:grid;gap:12px;max-width:640px}
+.steps li{counter-increment:st;display:flex;gap:14px;align-items:flex-start;font-size:16px;line-height:1.5;color:rgba(255,255,255,.9)}
+.steps li::before{content:counter(st);flex:0 0 34px;height:34px;border-radius:50%;background:var(--yellow);color:#111;font-family:var(--fDisp);font-size:18px;display:flex;align-items:center;justify-content:center;margin-top:-4px}
+.steps b{color:#fff}
+.ctaFinal__coord{margin-top:18px;font-size:14.5px;color:rgba(255,255,255,.88)}
+.ctaFinal__coord a{color:var(--yellow);font-weight:700;border-bottom:1px solid rgba(242,195,15,.5)}
+.ctaFinal__coord a:hover{border-bottom-color:var(--yellow)}
+#inscricao .display .line{display:block}
+.mdl__insc{background:var(--cream);border:2px solid var(--black);border-radius:14px;padding:14px 16px;margin-bottom:14px;box-shadow:4px 4px 0 var(--green)}
+.mdl__insc p{margin:0 0 10px;font-size:15px;line-height:1.5;color:#111}
+.mdl__step{display:inline-flex;align-items:center;gap:8px;background:var(--black);color:#fff;font-weight:700;font-size:14px;padding:10px 16px;border-radius:999px}
+.mdl__step:hover{background:var(--orange)}
+.mdl__step svg{width:16px;height:16px}
