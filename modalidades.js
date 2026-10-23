@@ -19,12 +19,12 @@
   const QUEM = 'Podem participar servidores efetivos, comissionados, contratados (PSS) e estagiários em exercício, a partir de 18 anos. Em todas as partidas, leve crachá, holerite ou número de matrícula com documento oficial com foto.';
 
   const M = {
-    'Futebol 7 Geral': { b: 'b', tags: ['Masculino', 'Até 39 anos'], quando: '27/10 a 09/11 (27 e 29/10; 3, 4, 5, 6 e 9/11)', onde: 'Arena Tancredão',
+    'Futebol 7 Geral': { b: 'b', tags: ['Masculino', 'Até 39 anos'], quando: '27/10 a 09/11 (27 e 29/10; 3, 4, 5, 6 e 9/11)', onde: 'Arena Max Atacadista (Arena Tancredão)',
       resumo: 'Regras oficiais da CBF7, com as adaptações do JOGA.',
       itens: ['1 time masculino por equipe, com até 14 atletas (7 titulares e 7 reservas).', 'Mínimo de 5 atletas para começar ou continuar a partida.',
         '2 tempos de 20 minutos corridos, com 5 minutos de intervalo.', 'Empate: decisão direta nos pênaltis, 3 cobranças alternadas; persistindo, uma por equipe até o vencedor.',
         'Quem joga no Geral não pode reforçar o time de Veteranos.'], pts: PT_GERAL },
-    'Futebol 7 Veteranos': { b: 'b', tags: ['Masculino', '40 anos ou mais'], quando: '27/10 a 09/11 (27 e 29/10; 3, 4, 5, 6 e 9/11)', onde: 'Arena Tancredão',
+    'Futebol 7 Veteranos': { b: 'b', tags: ['Masculino', '40 anos ou mais'], quando: '27/10 a 09/11 (27 e 29/10; 3, 4, 5, 6 e 9/11)', onde: 'Arena Max Atacadista (Arena Tancredão)',
       resumo: 'Regras oficiais da CBF7, com as mesmas normas do Futebol 7 Geral.',
       itens: ['Para atletas nascidos até 31/12/1986 (40 anos completos em 2026). Documento oficial com foto obrigatório.',
         '1 time masculino por equipe, com até 14 atletas (7 titulares e 7 reservas); mínimo de 5 para começar.', '2 tempos de 20 minutos corridos, com 5 minutos de intervalo.',
@@ -150,16 +150,16 @@
 
   const AGENDA = [
     ['26/10', 'seg', [['Bolão', 'Clube Atalaia'], ['Noite Cultural', 'Teatro Municipal']]],
-    ['27/10', 'ter', [['Futebol 7', 'Arena Tancredão'], ['Voleibol de Quadra', 'Arena Super Muffato'], ['Bocha', 'Clube Atalaia'], ['Tênis de Mesa', 'C.T. de Tênis de Mesa']]],
+    ['27/10', 'ter', [['Futebol 7', 'Arena Max Atacadista'], ['Voleibol de Quadra', 'Arena Super Muffato'], ['Bocha', 'Clube Atalaia'], ['Tênis de Mesa', 'C.T. de Tênis de Mesa']]],
     ['28/10', 'qua', [['Cerimônia de Abertura · 19h', 'Ginásio Joaquim Prestes'], ['Cabo de Guerra', 'Ginásio Joaquim Prestes']]],
-    ['29/10', 'qui', [['Futebol 7', 'Arena Tancredão'], ['Voleibol de Quadra', 'Arena Super Muffato'], ['Tênis de Mesa', 'C.T. de Tênis de Mesa']]],
+    ['29/10', 'qui', [['Futebol 7', 'Arena Max Atacadista'], ['Voleibol de Quadra', 'Arena Super Muffato'], ['Tênis de Mesa', 'C.T. de Tênis de Mesa']]],
     ['30/10', 'sex', [['Recesso', '']]],
     ['02/11', 'seg', [['Feriado', '']]],
-    ['03/11', 'ter', [['Futebol 7', 'Arena Tancredão'], ['Caçador/Queimada', 'Ginásio Joaquim Prestes'], ['Trilha Noturna', 'Parque das Araucárias']]],
-    ['04/11', 'qua', [['Futebol 7', 'Arena Tancredão'], ['Voleibol de Quadra', 'Arena Super Muffato']]],
-    ['05/11', 'qui', [['Futebol 7', 'Arena Tancredão'], ['Voleibol de Quadra', 'Arena Super Muffato'], ['Sinuca, Truco e Xadrez', 'Clube Atalaia']]],
-    ['06/11', 'sex', [['Futebol 7', 'Arena Tancredão']]],
-    ['09/11', 'seg', [['Futebol 7', 'Arena Tancredão'], ['Futsal Feminino', 'Ginásio Santa Teresinha']]],
+    ['03/11', 'ter', [['Futebol 7', 'Arena Max Atacadista'], ['Caçador/Queimada', 'Ginásio Joaquim Prestes'], ['Trilha Noturna', 'Parque das Araucárias']]],
+    ['04/11', 'qua', [['Futebol 7', 'Arena Max Atacadista'], ['Voleibol de Quadra', 'Arena Super Muffato']]],
+    ['05/11', 'qui', [['Futebol 7', 'Arena Max Atacadista'], ['Voleibol de Quadra', 'Arena Super Muffato'], ['Sinuca, Truco e Xadrez', 'Clube Atalaia']]],
+    ['06/11', 'sex', [['Futebol 7', 'Arena Max Atacadista']]],
+    ['09/11', 'seg', [['Futebol 7', 'Arena Max Atacadista'], ['Futsal Feminino', 'Ginásio Santa Teresinha']]],
     ['10/11', 'ter', [['Futsal Feminino', 'Ginásio Santa Teresinha'], ['Basquete 3x3', 'Ginásio Santana'], ['Rapel', 'Praça da Fé']]],
     ['11/11', 'qua', [['Futsal Feminino', 'Ginásio Santa Teresinha'], ['Basquete 3x3', 'Ginásio Santana']]],
     ['12/11', 'qui', [['Futsal Feminino', 'Ginásio Santa Teresinha'], ['Vôlei de Areia 4x4', 'Arena ATV'], ['Beach Tennis', 'Arena ATV']]],
