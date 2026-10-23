@@ -1,7 +1,7 @@
 /* ============================================================
    JOGA 2026 — janelas (pop-ups) de cada modalidade e da programação
    Fonte: Regulamento Geral homologado no Congresso Técnico (22/10/2026), Ata do Congresso,
-   Informativos 002, 003 e 004 e Cronograma oficial (calendário). Para atualizar uma regra, edite só este arquivo.
+   Informativos 002, 003 e 004, Cronograma oficial e tabela de jogos da Secretaria de Esportes (23/10/2026). Para atualizar uma regra, edite só este arquivo.
    ============================================================ */
 (() => {
   const INSCRICAO = 'https://inscricoesgdc.com.br/?param=7288';
@@ -20,26 +20,26 @@
   const QUEM = 'Podem participar servidores efetivos, comissionados, contratados (PSS) e estagiários em exercício, a partir de 18 anos. Em todas as partidas, leve crachá, holerite ou número de matrícula com documento oficial com foto.';
 
   const M = {
-    'Futebol 7 Geral': { b: 'b', tags: ['Masculino', 'Livre'], quando: '27/10 a 09/11 (27 e 29/10; 3, 4, 5, 6 e 9/11)', onde: 'Arena Max Atacadista (Arena Tancredão)',
+    'Futebol 7 Geral': { b: 'b', tags: ['Masculino', 'Livre'], quando: '27/10, 29/10, 03/11, 05/11 e 06/11 · das 18h30 às 21h30', onde: 'Arena Max Atacadista (Arena Tancredão)',
       resumo: 'Regras oficiais da CBF7, com as adaptações do JOGA.',
       itens: ['1 time masculino por equipe, com até 14 atletas (7 titulares e 7 reservas).', 'Mínimo de 5 atletas para começar ou continuar a partida.',
         '2 tempos de 20 minutos corridos, com 5 minutos de intervalo.', 'Empate: decisão direta nos pênaltis, 3 cobranças alternadas; persistindo, uma por equipe até o vencedor.',
-        'Categoria livre, sem limite de idade: quem tem 40 anos ou mais pode jogar no Geral e também no Veteranos.'], pts: PT_GERAL },
-    'Futebol 7 Veteranos': { b: 'b', tags: ['Masculino', '40 anos ou mais'], quando: '27/10 a 09/11 (27 e 29/10; 3, 4, 5, 6 e 9/11)', onde: 'Arena Max Atacadista (Arena Tancredão)',
+        'Categoria livre, sem limite de idade: quem tem 40 anos ou mais pode jogar no Geral e também no Veteranos.', '2 grupos de 3 equipes: A (Preta, Branca e Laranja) e B (Amarela, Verde e Azul). Os 2 primeiros de cada grupo fazem as semifinais cruzadas em 05/11; disputa de 3º lugar e final em 06/11.'], pts: PT_GERAL },
+    'Futebol 7 Veteranos': { b: 'b', tags: ['Masculino', '40 anos ou mais'], quando: '27/10, 29/10, 03/11, 05/11 e 06/11 · das 18h30 às 21h30', onde: 'Arena Max Atacadista (Arena Tancredão)',
       resumo: 'Regras oficiais da CBF7, com as mesmas normas do Futebol 7 Geral.',
       itens: ['Para atletas nascidos até 31/12/1986 (40 anos completos em 2026). Documento oficial com foto obrigatório.',
         '1 time masculino por equipe, com até 14 atletas (7 titulares e 7 reservas); mínimo de 5 para começar.', '2 tempos de 20 minutos corridos, com 5 minutos de intervalo.',
-        'Vitória no tempo normal vale 3 pontos. Empate: 3 pênaltis alternados e, se continuar, alternados até a definição; quem vence leva 2 pontos e quem perde, 0.', 'Quem tem 40 anos ou mais pode jogar também no Futebol 7 Geral. Quem tem menos de 40 não joga no Veteranos.', 'Disputa em grupo único, todos contra todos, entre as equipes inscritas.'], pts: PT_GERAL },
+        'Vitória no tempo normal vale 3 pontos. Empate: 3 pênaltis alternados e, se continuar, alternados até a definição; quem vence leva 2 pontos e quem perde, 0.', 'Quem tem 40 anos ou mais pode jogar também no Futebol 7 Geral. Quem tem menos de 40 não joga no Veteranos.', 'Disputa em grupo único, todos contra todos, entre as 5 equipes inscritas (Azul, Laranja, Verde, Preta e Branca). Quem somar mais pontos é campeão.'], pts: PT_GERAL },
     'Futsal Feminino': { b: 'b', tags: ['Feminino'], quando: '09/11 a 13/11', onde: 'Ginásio Santa Teresinha',
       resumo: 'Regras oficiais do futsal, com as adaptações do JOGA.',
       itens: ['Todas as equipes disputam. 1 time feminino por equipe, com até 10 atletas (5 titulares e 5 reservas); mínimo de 4 para começar.', '2 tempos de 10 minutos corridos, com 5 minutos de intervalo.',
         'Empate: 3 pênaltis alternados por equipe e, se continuar, alternados até a definição. Na fase classificatória, quem vence nos pênaltis leva 2 pontos e quem perde, 0.',
         'Substituições livres; tiro de meta com as mãos (até 4 segundos); lateral e escanteio com os pés.', '1 tempo técnico de 30 segundos por tempo de jogo; a capitã fala com a arbitragem.',
         '2 cartões amarelos = suspensão de 1 partida; cartão vermelho = suspensão automática da próxima partida.'], pts: PT_GERAL },
-    'Voleibol de Quadra': { b: 'b', tags: ['Masculino', 'Feminino'], quando: '27/10, 29/10, 04/11 e 05/11', onde: 'Arena Super Muffato (CIE · Pavão)',
+    'Voleibol de Quadra': { b: 'b', tags: ['Masculino', 'Feminino'], quando: '27/10 e 29/10 · a partir das 19h', onde: 'Arena Super Muffato (CIE · Pavão) · quadras 01 e 02',
       resumo: 'Regras oficiais da CBV, com disputa por chaves.',
       itens: ['1 time masculino e 1 feminino por equipe, com até 12 atletas cada.', 'Partidas em 2 sets vencedores; o 3º set, se houver, é tie-break.',
-        'No feminino, os primeiros colocados de cada grupo fazem a final e os segundos disputam o 3º lugar.', 'No masculino, disputa em grupo único, todos contra todos, entre as equipes inscritas.', 'No banco, só o técnico e o assistente técnico, identificados.'], pts: PT_GERAL },
+        'No feminino, 2 grupos de 3: A (Azul, Branca e Preta) e B (Amarela, Verde e Laranja). Semifinais cruzadas, disputa de 3º lugar e final em 29/10.', 'No masculino, disputa em grupo único, todos contra todos, entre as 5 equipes inscritas (Preta, Laranja, Branca, Verde e Azul).', 'No banco, só o técnico e o assistente técnico, identificados.'], pts: PT_GERAL },
     'Vôlei de Areia 4x4': { b: 'b', tags: ['Misto'], quando: '12/11', onde: 'Arena ATV',
       resumo: 'Quatro contra quatro na areia, com pelo menos uma mulher em quadra o tempo todo.',
       itens: ['6 atletas por time (4 titulares e 2 reservas); mínimo de 3 para começar.', 'Pelo menos 1 mulher em quadra durante toda a partida.',
@@ -54,12 +54,12 @@
       resumo: 'Regras oficiais FIBA 3x3, com as mesmas adaptações do Basquete 3x3 Geral.',
       itens: ['Para atletas nascidos até 31/12/1986 (40 anos completos em 2026). Documento oficial com foto.', '1 time masculino por equipe, com 6 atletas; mínimo de 3 para começar.', 'Disputa em grupo único, todos contra todos, entre as equipes inscritas.',
         '10 minutos corridos ou até 21 pontos; empate vai para a prorrogação até 2 pontos.', 'Quem joga no Basquete 3x3 Geral não pode jogar no Veteranos.'], pts: PT_GERAL },
-    'Cabo de Guerra': { b: 'b', tags: ['Masculino', 'Feminino'], quando: '28/10 (dia da Cerimônia de Abertura)', onde: 'Ginásio Joaquim Prestes',
+    'Cabo de Guerra': { b: 'b', tags: ['Masculino', 'Feminino'], quando: '28/10 (quarta), a partir das 20h, no dia da Cerimônia de Abertura', onde: 'Ginásio Joaquim Prestes · pistas 01 e 02',
       resumo: 'Força, pegada e equipe inteira no mesmo puxão.',
       itens: ['1 time masculino e 1 feminino por equipe, com 12 atletas cada (10 titulares e 2 reservas); mínimo de 8 para começar.',
         'Melhor de 3 puxadas: vence quem ganhar 2.', 'Ganha a puxada quem arrastar o adversário 3 metros a partir da linha central.',
-        'Proibido enrolar a corda nas mãos, nos braços ou no corpo: só pegada direta.', 'No masculino, disputa em grupo único, todos contra todos, entre as equipes inscritas.'], pts: PT_GERAL },
-    'Caçador/Queimada': { b: 'b', tags: ['Masculino', 'Feminino'], quando: '03/11', onde: 'Ginásio Joaquim Prestes',
+        'Proibido enrolar a corda nas mãos, nos braços ou no corpo: só pegada direta.', 'No feminino, 2 grupos de 3: A (Laranja, Amarela e Branca) e B (Verde, Azul e Preta), com semifinais cruzadas, disputa de 3º lugar e final.', 'No masculino, disputa em grupo único, todos contra todos, entre as 5 equipes inscritas (Branca, Azul, Amarela, Preta e Laranja).'], pts: PT_GERAL },
+    'Caçador/Queimada': { b: 'b', tags: ['Masculino', 'Feminino'], quando: '04/11', onde: 'Ginásio Joaquim Prestes',
       resumo: 'A queimada de sempre, com regra combinada para todo mundo.',
       itens: ['Até 14 atletas por time (10 titulares e 4 reservas); mínimo de 7 para começar.', 'Melhor de 2 sets vencedores, de 10 minutos cada.',
         'O capitão (base) tem 1 vida e pode ir para a "linha" depois que um companheiro é queimado.',
@@ -72,10 +72,10 @@
         'Saque por baixo ou lateral, com o pé atrás da linha de fundo. Bola laranja homologada pela CBT.', 'Aquecimento de 3 minutos; 1 minuto entre sets; 1 tempo de 30 segundos por set.'], pts: PT_GERAL },
     'Tênis de Mesa': { b: 'g', tags: ['Masculino', 'Feminino', 'Individual'], quando: '27/10 e 29/10', onde: 'Centro de Treinamento de Tênis de Mesa',
       resumo: 'Regras oficiais da CBTM e da Federação de Tênis de Mesa do Paraná.',
-      itens: ['Até 4 participantes por naipe por equipe.', 'Melhor de 3 sets; cada set vai até 11 pontos (com 2 pontos de diferença).', 'Saque alternado conforme a regra oficial.', 'O sorteio das chaves é feito no local, antes do início das disputas.'], pts: PT_INDIV },
+      itens: ['Até 4 participantes por naipe por equipe.', 'Melhor de 3 sets; cada set vai até 11 pontos (com 2 pontos de diferença).', 'Saque alternado conforme a regra oficial.'], pts: PT_INDIV },
     'Bocha': { b: 'g', tags: ['Duplas livres'], quando: '27/10', onde: 'Clube Atalaia',
       resumo: 'Duplas de formação livre: dois homens, duas mulheres ou um homem e uma mulher. Regras da Confederação Brasileira de Bocha.',
-      itens: ['Até 6 atletas por equipe, em 2 duplas, cada uma com 2 titulares e 1 reserva. São 12 duplas em 4 chaves de 3; classificam as 2 melhores de cada chave.', 'O sorteio das chaves é feito no local, antes do início das disputas.',
+      itens: ['Até 6 atletas por equipe, em 2 duplas, cada uma com 2 titulares e 1 reserva. São 12 duplas em 4 chaves de 3; classificam as 2 melhores de cada chave.',
         'Dupla contra dupla, com 2 bochas por jogador. Objetivo: deixar suas bochas mais perto do bolim do que as do adversário.',
         'Cada bocha mais próxima do bolim que a melhor adversária vale 1 ponto; as partidas vão até 8 pontos.',
         'Na rafa e no tiro, declare antes ao árbitro o tipo de jogada e o alvo. A medição é do árbitro.',
@@ -85,7 +85,7 @@
       itens: ['1 equipe mista por equipe: 5 titulares e 1 reserva (sugestão: 4 de um gênero e 2 do outro); mínimo de 5 para começar.',
         '4 pistas, 5 arremessos por pista: 20 por passada, em 2 passadas (40 arremessos).', 'Vence quem derrubar mais pinos na soma; contam os 4 melhores, com 1 descarte.',
         'Arremesso que passar da linha é anulado; bola fora da pista não conta; pino travado ou falha mecânica: repete.',
-        'Substituição só entre rodadas, do mesmo naipe e com autorização da arbitragem.', 'Tolerância de 10 minutos; depois disso, W.O.', 'O sorteio das chaves é feito no local, antes do início das disputas.'], pts: PT_GERAL },
+        'Substituição só entre rodadas, do mesmo naipe e com autorização da arbitragem.', 'Tolerância de 10 minutos; depois disso, W.O.'], pts: PT_GERAL },
     'Sinuca': { b: 'g', tags: ['Masculino', 'Feminino', 'Misto', 'Duplas'], quando: '05/11', onde: 'Clube Atalaia',
       resumo: 'Bola 8, em duplas, com sorteio inicial e mata-mata.',
       itens: ['Até 3 duplas por equipe: 1 masculina, 1 feminina e 1 mista, com 6 atletas diferentes. A mesma pessoa não joga em mais de uma categoria.', 'Sorteio inicial no local e depois mata-mata; as categorias jogam separadas.',
@@ -124,13 +124,13 @@
       resumo: 'Regras da FIDE combinadas com o regulamento do JOGA.',
       itens: ['Até 5 participantes por equipe.', 'Sistema suíço, 6 rodadas, 15 minutos de reflexão por jogador, sem acréscimo.',
         'Vitória vale 1 ponto, empate 0,5 e derrota 0.', 'Desempate: confronto direto, milésimos medianos, milésimos totais e Sonneborn-Berger.',
-        'Peça tocada é peça jogada; aperte o relógio com a mesma mão que moveu a peça.', 'O sorteio das chaves é feito no local, antes do início das disputas.'], pts: PT_INDIV },
+        'Peça tocada é peça jogada; aperte o relógio com a mesma mão que moveu a peça.'], pts: PT_INDIV },
     'Truco': { b: 'k', tags: ['Duplas', 'Formação livre'], quando: '05/11', onde: 'Clube Atalaia',
       resumo: 'Truco Paulista na regra de bar, com as regras da Federação Paranaense de Truco no que o regulamento não especificar.',
       itens: ['Duplas de formação livre: masculinas, femininas ou mistas, sem obrigação de ter um homem e uma mulher.', 'Baralho de 40 cartas (sem 8, 9 e 10); a vira define a manilha.',
         'Sem envido e sem flor. Truco vale 3, seis vale 6, nove vale 9 e doze vale 12. Partidas até 12 pontos, em melhor de 3.',
         'Corte livre; cartas dadas uma a uma, sempre por baixo. Proibido trucar com 2 ou 4 cartas.', 'Mão de onze: a dupla com 11 pontos pode trocar as cartas e decidir se joga a mão.',
-        'Eliminatória simples. Irregularidade comprovada desclassifica a dupla.', 'O sorteio das chaves é feito no local, antes do início das disputas.'], pts: PT_GERAL },
+        'Eliminatória simples. Irregularidade comprovada desclassifica a dupla.'], pts: PT_GERAL },
 
     /* ---------------- destaques da programação ---------------- */
     'Noite Cultural': { b: 'e', ev: true, tags: ['Show de Talentos', 'Talento Escondido', 'Batalha de Dança'], quando: '26/10 (segunda-feira), às 19h', onde: 'Teatro Municipal Marina Karam Primak · Rua Padre Chagas, 3130, Centro',
@@ -177,23 +177,37 @@
   };
 
   const AGENDA = [
-    ['26/10', 'seg', [['Bolão', 'Clube Atalaia'], ['Noite Cultural · 19h', 'Teatro Municipal']]],
-    ['27/10', 'ter', [['Futebol 7', 'Arena Max Atacadista'], ['Voleibol de Quadra', 'Arena Super Muffato'], ['Bocha', 'Clube Atalaia'], ['Tênis de Mesa', 'C.T. de Tênis de Mesa']]],
-    ['28/10', 'qua', [['Cerimônia de Abertura · 19h', 'Ginásio Joaquim Prestes'], ['Cabo de Guerra', 'Ginásio Joaquim Prestes']]],
-    ['29/10', 'qui', [['Futebol 7', 'Arena Max Atacadista'], ['Voleibol de Quadra', 'Arena Super Muffato'], ['Tênis de Mesa', 'C.T. de Tênis de Mesa']]],
+    ['26/10', 'seg', [['Bolão', 'Clube Atalaia · sorteio na hora'], ['Noite Cultural · 19h', 'Teatro Municipal']]],
+    ['27/10', 'ter', [['Futebol 7', 'Arena Max Atacadista · 18h30 às 21h30'], ['Voleibol de Quadra', 'Arena Super Muffato · 19h às 21h30'], ['Bocha', 'Clube Atalaia · sorteio na hora'], ['Tênis de Mesa', 'C.T. de Tênis de Mesa · sorteio na hora']]],
+    ['28/10', 'qua', [['Cerimônia de Abertura · 19h', 'Ginásio Joaquim Prestes'], ['Cabo de Guerra', 'Ginásio Joaquim Prestes · a partir das 20h']]],
+    ['29/10', 'qui', [['Futebol 7', 'Arena Max Atacadista · 18h30 às 21h30'], ['Voleibol de Quadra', 'Arena Super Muffato · 19h às 21h · finais do feminino'], ['Tênis de Mesa', 'C.T. de Tênis de Mesa']]],
     ['30/10', 'sex', [['Recesso', '']]],
     ['02/11', 'seg', [['Feriado', '']]],
-    ['03/11', 'ter', [['Futebol 7', 'Arena Max Atacadista'], ['Caçador/Queimada', 'Ginásio Joaquim Prestes'], ['Trilha Noturna', 'Parque das Araucárias']]],
-    ['04/11', 'qua', [['Futebol 7', 'Arena Max Atacadista'], ['Voleibol de Quadra', 'Arena Super Muffato']]],
-    ['05/11', 'qui', [['Futebol 7', 'Arena Max Atacadista'], ['Voleibol de Quadra', 'Arena Super Muffato'], ['Sinuca, Truco e Xadrez', 'Clube Atalaia']]],
-    ['06/11', 'sex', [['Futebol 7', 'Arena Max Atacadista']]],
-    ['09/11', 'seg', [['Futebol 7', 'Arena Max Atacadista'], ['Futsal Feminino', 'Ginásio Santa Teresinha']]],
+    ['03/11', 'ter', [['Futebol 7', 'Arena Max Atacadista · 18h30 às 21h30'], ['Trilha Noturna', 'Parque das Araucárias']]],
+    ['04/11', 'qua', [['Caçador/Queimada', 'Ginásio Joaquim Prestes']]],
+    ['05/11', 'qui', [['Futebol 7', 'Arena Max Atacadista · 18h30 às 21h30 · semifinais do Geral'], ['Sinuca, Truco e Xadrez', 'Clube Atalaia · sorteio na hora']]],
+    ['06/11', 'sex', [['Futebol 7', 'Arena Max Atacadista · 18h30 às 21h30 · finais do Geral']]],
+    ['09/11', 'seg', [['Futsal Feminino', 'Ginásio Santa Teresinha']]],
     ['10/11', 'ter', [['Futsal Feminino', 'Ginásio Santa Teresinha'], ['Basquete 3x3', 'Ginásio Santana'], ['Rapel', 'Praça da Fé']]],
     ['11/11', 'qua', [['Futsal Feminino', 'Ginásio Santa Teresinha'], ['Basquete 3x3', 'Ginásio Santana']]],
     ['12/11', 'qui', [['Futsal Feminino', 'Ginásio Santa Teresinha'], ['Vôlei de Areia 4x4', 'Arena ATV'], ['Beach Tennis', 'Arena ATV'], ['Pesagem dos alimentos', 'Arrecadação Solidária'], ['Último dia da Doação de Sangue', 'Hemocentro']]],
     ['13/11', 'sex', [['Futsal Feminino', 'Ginásio Santa Teresinha']]],
     ['14/11', 'sáb', [['Corrida de Rua e Caminhada', 'Ginásio Joaquim Prestes'], ['Encerramento · 9h', 'resultados e premiação · local a confirmar']]],
   ];
+
+
+  /* tabela oficial de jogos (Secretaria de Esportes · Gerenciador de Competições, 23/10/2026) */
+  const JOGOS = {"Cabo de Guerra": [["28/10", "quarta", "Ginásio Joaquim Prestes · Pista 01", "Feminino", [["20h", "Laranja", "Amarela", "Grupo A"], ["20h10", "Verde", "Azul", "Grupo B"], ["20h20", "Branca", "Laranja", "Grupo A"], ["20h30", "Azul", "Preta", "Grupo B"], ["20h40", "Amarela", "Branca", "Grupo A"], ["20h50", "Preta", "Verde", "Grupo B"], ["21h", "1º Grupo A", "2º Grupo B", "Semifinal 1"], ["21h10", "1º Grupo B", "2º Grupo A", "Semifinal 2"], ["21h20", "Perdedor SF1", "Perdedor SF2", "3º lugar"], ["21h30", "Vencedor SF1", "Vencedor SF2", "Final"]]], ["28/10", "quarta", "Ginásio Joaquim Prestes · Pista 02", "Masculino", [["20h", "Branca", "Azul", "Grupo único"], ["20h10", "Amarela", "Preta", "Grupo único"], ["20h20", "Laranja", "Amarela", "Grupo único"], ["20h30", "Azul", "Preta", "Grupo único"], ["20h40", "Preta", "Branca", "Grupo único"], ["20h50", "Azul", "Laranja", "Grupo único"], ["21h", "Amarela", "Azul", "Grupo único"], ["21h10", "Branca", "Laranja", "Grupo único"], ["21h20", "Laranja", "Preta", "Grupo único"], ["21h30", "Branca", "Amarela", "Grupo único"]]]], "Futebol 7 Veteranos": [["27/10", "terça", "Arena Max Atacadista (Arena Tancredão)", "", [["18h30", "Azul", "Laranja", "Grupo único"], ["19h30", "Verde", "Preta", "Grupo único"]]], ["29/10", "quinta", "Arena Max Atacadista (Arena Tancredão)", "", [["19h30", "Laranja", "Preta", "Grupo único"], ["20h30", "Branca", "Verde", "Grupo único"]]], ["03/11", "terça", "Arena Max Atacadista (Arena Tancredão)", "", [["20h30", "Preta", "Azul", "Grupo único"], ["21h30", "Laranja", "Branca", "Grupo único"]]], ["05/11", "quinta", "Arena Max Atacadista (Arena Tancredão)", "", [["18h30", "Verde", "Laranja", "Grupo único"], ["20h30", "Azul", "Branca", "Grupo único"]]], ["06/11", "sexta", "Arena Max Atacadista (Arena Tancredão)", "", [["19h30", "Azul", "Verde", "Grupo único"], ["21h30", "Branca", "Preta", "Grupo único"]]]], "Futebol 7 Geral": [["27/10", "terça", "Arena Max Atacadista (Arena Tancredão)", "", [["20h30", "Amarela", "Verde", "Grupo B"], ["21h30", "Preta", "Branca", "Grupo A"]]], ["29/10", "quinta", "Arena Max Atacadista (Arena Tancredão)", "", [["18h30", "Verde", "Azul", "Grupo B"], ["21h30", "Branca", "Laranja", "Grupo A"]]], ["03/11", "terça", "Arena Max Atacadista (Arena Tancredão)", "", [["18h30", "Laranja", "Preta", "Grupo A"], ["19h30", "Azul", "Amarela", "Grupo B"]]], ["05/11", "quinta", "Arena Max Atacadista (Arena Tancredão)", "", [["19h30", "1º Grupo B", "2º Grupo A", "Semifinal 2"], ["21h30", "1º Grupo A", "2º Grupo B", "Semifinal 1"]]], ["06/11", "sexta", "Arena Max Atacadista (Arena Tancredão)", "", [["18h30", "Perdedor SF1", "Perdedor SF2", "3º lugar"], ["20h30", "Vencedor SF1", "Vencedor SF2", "Final"]]]], "Voleibol de Quadra": [["27/10", "terça", "Arena Super Muffato (CIE · Pavão) · Quadra 01", "Masculino", [["19h", "Preta", "Laranja", "Grupo único"], ["19h30", "Branca", "Verde", "Grupo único"], ["20h", "Azul", "Preta", "Grupo único"], ["20h30", "Verde", "Laranja", "Grupo único"], ["21h", "Laranja", "Branca", "Grupo único"]]], ["27/10", "terça", "Arena Super Muffato (CIE · Pavão) · Quadra 02", "Feminino", [["19h", "Amarela", "Verde", "Grupo B"], ["19h30", "Azul", "Branca", "Grupo A"], ["20h", "Branca", "Preta", "Grupo A"], ["20h30", "Verde", "Laranja", "Grupo B"], ["21h", "Preta", "Azul", "Grupo A"], ["21h30", "Laranja", "Amarela", "Grupo B"]]], ["29/10", "quinta", "Arena Super Muffato (CIE · Pavão) · Quadra 01", "Masculino", [["19h", "Verde", "Azul", "Grupo único"], ["19h30", "Preta", "Verde", "Grupo único"], ["20h", "Branca", "Azul", "Grupo único"], ["20h30", "Azul", "Laranja", "Grupo único"], ["21h", "Branca", "Preta", "Grupo único"]]], ["29/10", "quinta", "Arena Super Muffato (CIE · Pavão) · Quadra 02", "Feminino", [["19h", "1º Grupo A", "2º Grupo B", "Semifinal 1"], ["19h30", "1º Grupo B", "2º Grupo A", "Semifinal 2"], ["20h", "Perdedor SF1", "Perdedor SF2", "3º lugar"], ["20h30", "Vencedor SF1", "Vencedor SF2", "Final"]]]]};
+  const COR = { Azul: '#1F4FB8', Verde: '#4DAE3F', Amarela: '#F2C30F', Branca: '#F5F2E9', Preta: '#0E0E0E', Laranja: '#E94E2C' };
+  const tm = n => COR[n] ? `<span class="jg__t" style="--c:${COR[n]}"><i></i>${n}</span>` : `<span class="jg__t ph"><i></i>${n}</span>`;
+  const SORTEIO_LOCAL = ['Bolão', 'Bocha', 'Tênis de Mesa', 'Sinuca', 'Truco', 'Xadrez'];   // Art. 15, § 2º
+  const jogos = key => {
+    if (SORTEIO_LOCAL.includes(key)) return `<h4>Jogos</h4><div class="jg"><p class="jg__sort"><b>Sorteio na hora.</b> Não tem tabela antes: as chaves são sorteadas no local, antes do início das disputas. Chegue no horário.</p></div>`;
+    const dias = JOGOS[key]; if (!dias) return '';
+    return `<h4>Jogos</h4><div class="jg">${dias.map(([d, w, loc, nap, js]) => `<p class="jg__d"><b>${d}</b> ${w}${nap ? ` · <em>${nap}</em>` : ''}<span>${loc}</span></p>
+      <ul class="jg__l">${js.map(([h, a, b, g]) => `<li class="jg__r"><span class="jg__h">${h}</span><span class="jg__m">${tm(a)}<span class="jg__x">x</span>${tm(b)}</span><span class="jg__g${/Final|lugar|Semi/.test(g) ? ' fin' : ''}">${g}</span></li>`).join('')}</ul>`).join('')}
+      <p class="jg__note">Tabela oficial da Secretaria de Esportes. Mudanças de horário saem nas notas oficiais.</p></div>`;
+  };
 
   const slug = s => 'mod-' + s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
   const SLUGS = {}; Object.keys(M).forEach(k => SLUGS[slug(k)] = k); SLUGS['mod-programacao'] = '__programacao';
@@ -229,7 +243,7 @@
     const quem = d.ev ? '' : `<p class="mdl__who">${d.quem || QUEM}</p>`;
     return `<div class="mdl__head" style="--c:${bc}"><p class="mdl__k">${d.ev ? (d.k || 'Destaque da programação') : 'Modalidade · ' + bn}</p><h3 id="mdlTitle">${key}</h3><div class="mdl__tags">${tags}</div></div>
       <div class="mdl__meta"><p>${IC.cal}<span><b>Quando</b>${d.quando}</span></p><p>${IC.pin}<span><b>Onde</b>${d.onde}</span></p></div>
-      <div class="mdl__body"><p class="mdl__lead">${d.resumo}</p><h4>Como funciona</h4><ul class="mdl__list">${itens}</ul>${pts}</div>
+      <div class="mdl__body"><p class="mdl__lead">${d.resumo}</p>${jogos(key)}<h4>Como funciona</h4><ul class="mdl__list">${itens}</ul>${pts}</div>
       <div class="mdl__foot">${go}<a class="mdl__doc" href="${REGULAMENTO}" target="_blank" rel="noopener">Regulamento completo (PDF)</a>${quem}${AVISO}</div>`;
   };
   const open = (key, push = true) => {
