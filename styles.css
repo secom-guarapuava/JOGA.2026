@@ -1440,3 +1440,40 @@ html.mdl-open{overflow:hidden}
   .cal__row{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:10px;margin:0 calc(var(--pad) * -1);padding:4px var(--pad) 12px;scroll-padding-inline:var(--pad);scrollbar-width:thin}
   .cal__day{flex:0 0 76%;scroll-snap-align:start}
 }
+
+/* ============================================================
+   ATUALIZAÇÃO 23/10/2026 (v10) — ações solidárias e documentos oficiais
+   ============================================================ */
+.solid{margin-top:22px;display:grid;grid-template-columns:1.1fr 1fr 1fr;gap:16px;align-items:stretch;position:relative;z-index:1;
+  padding:22px;border-radius:26px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12)}
+.solid__k{font-size:12px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:#8BDB7C}
+.solid__head h3{font-family:var(--fDisp);font-weight:400;font-size:clamp(26px,2.6vw,34px);line-height:1.06;text-transform:uppercase;color:#fff;margin-top:6px;letter-spacing:.01em}
+.solid__head p{color:rgba(255,255,255,.8);font-size:14.5px;margin-top:8px;line-height:1.45}
+.solid__card{display:flex;align-items:flex-start;gap:14px;text-align:left;background:#fff;color:#111;border-radius:20px;padding:18px;border:0;cursor:pointer;
+  font:inherit;transition:transform .2s ease,box-shadow .2s ease}
+.solid__card:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(0,0,0,.28)}
+.solid__card:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
+.solid__ic{flex:none;width:48px;height:48px;border-radius:14px;display:grid;place-items:center;background:var(--c);color:#fff}
+.solid__tx{display:flex;flex-direction:column;gap:5px;flex:1;min-width:0}
+.solid__tx b{font-family:var(--fDisp);font-weight:400;font-size:25px;line-height:1.28;text-transform:uppercase;letter-spacing:.01em}
+.solid__tx span{font-size:14px;line-height:1.42;color:#3a3a3a}
+.solid__tx em{font-style:normal;font-size:12.5px;font-weight:800;letter-spacing:.02em;color:var(--c2);margin-top:3px}
+.solid__go{flex:none;align-self:center;color:var(--c2)}
+@media(max-width:1020px){.solid{grid-template-columns:1fr 1fr}.solid__head{grid-column:1/-1}}
+@media(max-width:640px){.solid{grid-template-columns:1fr;padding:16px;border-radius:22px}.solid__card{padding:16px}.solid__go{display:none}}
+
+.docs{margin-top:30px;position:relative;z-index:1}
+.docs__t{font-family:var(--fDisp);font-weight:400;font-size:26px;text-transform:uppercase;letter-spacing:.01em;color:#fff}
+.docs__list{list-style:none;display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:14px;padding:0}
+.docs__list a{display:flex;align-items:center;gap:14px;padding:14px 16px;border-radius:14px;background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.12);color:#fff;text-decoration:none;transition:background .2s ease,border-color .2s ease,transform .2s ease}
+.docs__list a:hover{background:rgba(255,255,255,.1);border-color:var(--yellow);transform:translateY(-2px)}
+.docs__ic{flex:none;width:44px;height:44px;border-radius:10px;background:var(--yellow);color:#1a1300;font-weight:800;font-size:12px;letter-spacing:.08em;display:grid;place-items:center}
+.docs__tx{display:flex;flex-direction:column;gap:2px;min-width:0}
+.docs__tx b{font-size:15.5px}
+.docs__tx small{font-size:13px;line-height:1.4;color:rgba(255,255,255,.72)}
+.docs__note{margin-top:12px;font-size:13.5px;color:rgba(255,255,255,.7)}
+@media(max-width:880px){.docs__list{grid-template-columns:1fr}}
+.mdl__list a{font-weight:700;text-decoration:underline}
+.mdl__meta a{font-weight:700;text-decoration:underline}
+.mdl a[href^="https://wa.me"]{white-space:nowrap}
