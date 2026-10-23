@@ -63,6 +63,7 @@
     <a href="#programacao">Programação</a>
     <a href="#sobre">Sobre</a>
     <a href="#modalidades">Modalidades</a>
+    <a href="#calendario">Calendário dos jogos</a>
     <a href="#equipes">Equipes</a>
     <a href="#regulamento">Regulamento</a>
     <a href="#duvidas">Dúvidas</a>
@@ -457,6 +458,20 @@
       <span class="notice__ic" aria-hidden="true">!</span>
       <p><b>Aviso importante:</b> confira sempre as informações no site oficial do JOGA, no Instagram <a href="https://www.instagram.com/joga26_pref/" target="_blank" rel="noopener">@joga26_pref</a>, no <a href="https://chat.whatsapp.com/GyE0cGUtcu2523b2oBeTil" target="_blank" rel="noopener">grupo do WhatsApp</a> ou com os coordenadores. Ficou com dúvida? Procure o coordenador da sua equipe.</p>
     </div>
+    <div class="cal" id="calendario">
+      <div class="cal__head reveal">
+        <div>
+          <p class="cal__k">Calendário dos jogos</p>
+          <h3 class="cal__t">Dia a dia, o que tem e onde.</h3>
+          <p class="cal__p">Toque em uma modalidade para ver as regras. Os horários de cada partida saem nas tabelas oficiais da organização.</p>
+        </div>
+        <label class="cal__f"><span>Ver só</span>
+          <select id="calFiltro" aria-label="Filtrar o calendário por modalidade"><option value="">Todas as modalidades</option></select>
+        </label>
+      </div>
+      <div class="cal__weeks" id="calWeeks"><noscript><p>Ative o JavaScript para ver o calendário, ou consulte o cronograma no regulamento (PDF).</p></noscript></div>
+      <p class="cal__note">Datas e locais do cronograma oficial. Corrida Kids: data e local a confirmar.</p>
+    </div>
   </div>
 </section>
 
@@ -755,10 +770,13 @@
       <h2 class="display" id="apoioTitle">Quem joga <span class="ink ink--y">junto</span>.</h2>
       <p class="lead">Empresas que apoiam o JOGA 2026 e ajudam a fazer a festa dos servidores acontecer.</p>
     </div>
-    <ul class="apoio__grid">
-      <li class="apoio__item reveal"><img src="assets/apoiadores/max-atacadista.png" alt="Max Atacadista" loading="lazy" decoding="async"></li>
+    <div class="apoio__tier reveal"><span class="apoio__tierK"><i><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M6.5 3.5h11l4 5.5L12 21 2.5 9z"/><path d="M2.5 9h19M9 3.5 7.5 9 12 21l4.5-12L15 3.5"/></svg></i>Cota Diamante</span></div>
+    <ul class="apoio__grid apoio__grid--d" aria-label="Apoiadores da cota Diamante">
+      <li class="apoio__item apoio__item--d reveal"><img src="assets/apoiadores/max-atacadista.png" alt="Max Atacadista" loading="lazy" decoding="async"></li>
+      <li class="apoio__item apoio__item--d reveal"><img src="assets/apoiadores/super-muffato.png" alt="Super Muffato" loading="lazy" decoding="async"><span class="apoio__nm">Arena Super Muffato · vôlei de quadra</span></li>
+    </ul>
+    <ul class="apoio__grid apoio__grid--more" aria-label="Outros apoiadores">
       <li class="apoio__item reveal"><img src="assets/apoiadores/realiza-veiculos.png" alt="Realiza Veículos" loading="lazy" decoding="async"></li>
-      <li class="apoio__item reveal"><img src="assets/apoiadores/super-muffato.png" alt="Super Muffato" loading="lazy" decoding="async"></li>
     </ul>
   </div>
 </section>
@@ -776,6 +794,7 @@
       <a href="#programacao">Programação</a>
       <a href="#sobre">Sobre</a>
       <a href="#modalidades">Modalidades</a>
+      <a href="#calendario">Calendário</a>
       <a href="#equipes">Equipes</a>
       <a href="#regulamento">Regulamento</a>
       <a href="#duvidas">Dúvidas</a>

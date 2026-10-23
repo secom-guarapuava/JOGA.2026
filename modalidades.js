@@ -255,6 +255,64 @@
   });
   document.querySelectorAll('[data-open]').forEach(b => b.addEventListener('click', e => { e.preventDefault(); open(b.dataset.open); }));
 
+
+  /* ---------------- calendário dos jogos (abaixo da grade) ---------------- */
+  const LABEL_KEYS = {
+    'Futebol 7': ['Futebol 7 Geral', 'Futebol 7 Veteranos'],
+    'Basquete 3x3': ['Basquete 3x3 Geral', 'Basquete 3x3 Veteranos'],
+    'Sinuca, Truco e Xadrez': ['Sinuca', 'Truco', 'Xadrez'],
+    'Corrida de Rua e Caminhada': ['Corrida de Rua', 'Caminhada'],
+    'Cerimônia de Abertura · 19h': ['Cerimônia de Abertura'],
+    'Noite Cultural': ['Noite Cultural'],
+  };
+  const keysOf = lbl => LABEL_KEYS[lbl] || (lbl in M ? [lbl] : []);
+  const FILTRO = [   // [rótulo, chaves]
+    ['Futebol 7', ['Futebol 7 Geral', 'Futebol 7 Veteranos']], ['Futsal Feminino', ['Futsal Feminino']], ['Voleibol de Quadra', ['Voleibol de Quadra']],
+    ['Vôlei de Areia 4x4', ['Vôlei de Areia 4x4']], ['Basquete 3x3', ['Basquete 3x3 Geral', 'Basquete 3x3 Veteranos']], ['Cabo de Guerra', ['Cabo de Guerra']],
+    ['Caçador/Queimada', ['Caçador/Queimada']], ['Beach Tennis', ['Beach Tennis']], ['Tênis de Mesa', ['Tênis de Mesa']], ['Bocha', ['Bocha']], ['Bolão', ['Bolão']],
+    ['Sinuca', ['Sinuca']], ['Truco', ['Truco']], ['Xadrez', ['Xadrez']], ['Caminhada', ['Caminhada']], ['Corrida de Rua', ['Corrida de Rua']],
+    ['Rapel', ['Rapel']], ['Trilha Noturna', ['Trilha Noturna']], ['Noite Cultural', ['Noite Cultural']], ['Cerimônia de Abertura', ['Cerimônia de Abertura']],
+  ];
+  const WEEKS = [['Semana 1', '26 a 30 de outubro', d => d.endsWith('/10')], ['Semana 2', '2 a 6 de novembro', d => d.endsWith('/11') && +d.slice(0, 2) <= 8],
+                 ['Semana 3', '9 a 14 de novembro', d => d.endsWith('/11') && +d.slice(0, 2) >= 9]];
+  const WD = { seg: 'Segunda', ter: 'Terça', qua: 'Quarta', qui: 'Quinta', sex: 'Sexta', 'sáb': 'Sábado', dom: 'Domingo' };
+  const calBox = document.getElementById('calWeeks');
+  if (calBox) {
+    const hoje = new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Sao_Paulo', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date()); // AAAA-MM-DD
+    const iso = d => '2026-' + d.slice(3, 5) + '-' + d.slice(0, 2);
+    const item = ([lbl, onde]) => {
+      const ks = keysOf(lbl);
+      const cor = ks.length ? BLOCO[M[ks[0]].b][1] : '#9aa3b5';
+      const nome = ks.length ? `<button type="button" class="cal__go" data-cal-open="${ks[0]}">${lbl}</button>` : `<span class="cal__nm">${lbl}</span>`;
+      return `<li data-k="${ks.join('|')}" style="--c:${cor}"><i aria-hidden="true"></i><div>${nome}${onde ? `<span class="cal__onde">${onde}</span>` : ''}</div></li>`;
+    };
+    calBox.innerHTML = WEEKS.map(([t, sub, f]) => {
+      const dias = AGENDA.filter(([d]) => f(d)).map(([d, w, its]) => {
+        const off = its.length === 1 && /^(Recesso|Feriado)$/.test(its[0][0]);
+        const st = iso(d) === hoje ? ' is-today' : (iso(d) < hoje ? ' is-past' : '');
+        const body = off ? `<p class="cal__off">${its[0][0]} · sem jogos</p>` : `<ul>${its.map(item).join('')}</ul>`;
+        return `<article class="cal__day${off ? ' is-off' : ''}${st}"><header><b>${d.slice(0, 2)}<small>/${d.slice(3)}</small></b><span>${WD[w] || w}</span>${st === ' is-today' ? '<em>Hoje</em>' : ''}</header>${body}</article>`;
+      }).join('');
+      return `<section class="cal__wk" aria-label="${t}, ${sub}"><h4><span>${t}</span>${sub}</h4><div class="cal__row">${dias}</div></section>`;
+    }).join('');
+    const td = calBox.querySelector('.cal__day.is-today');   // no celular, a semana já abre no dia de hoje
+    if (td) { const row = td.parentElement; row.scrollLeft += td.getBoundingClientRect().left - row.getBoundingClientRect().left - parseFloat(getComputedStyle(row).paddingLeft); }
+    calBox.addEventListener('click', e => { const b = e.target.closest('[data-cal-open]'); if (b) open(b.dataset.calOpen); });
+    const sel = document.getElementById('calFiltro');
+    if (sel) {
+      sel.insertAdjacentHTML('beforeend', FILTRO.map(([r], i) => `<option value="${i}">${r}</option>`).join(''));
+      sel.addEventListener('change', () => {
+        const ks = sel.value === '' ? null : FILTRO[+sel.value][1];
+        calBox.classList.toggle('is-filtered', !!ks);
+        calBox.querySelectorAll('.cal__day').forEach(day => {
+          let hit = false;
+          day.querySelectorAll('li').forEach(li => { const on = !!ks && li.dataset.k.split('|').some(k => ks.includes(k)); li.classList.toggle('is-hit', on); hit = hit || on; });
+          day.classList.toggle('is-hit', hit);
+        });
+      });
+    }
+  }
+
   const fromHash = () => { const k = SLUGS[location.hash.slice(1)]; if (k) open(k, false); };
   window.addEventListener('hashchange', fromHash);
   fromHash();
