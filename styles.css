@@ -1525,6 +1525,13 @@ html.mdl-open{overflow:hidden}
 
 
 /* ============================================================
+   ATUALIZAÇÃO 27/10/2026 — 3º apoiador Diamante (Ilumina Guarapuava): três cards na mesma linha
+   ============================================================ */
+.apoio__item--d{flex:0 1 360px}
+@media (max-width:640px){.apoio__item--d{flex:1 1 100%}}
+
+
+/* ============================================================
    ATUALIZAÇÃO 26/10/2026 — placar ao vivo (placar.js)
    ============================================================ */
 .stand__c--b{border:1px solid #111}
