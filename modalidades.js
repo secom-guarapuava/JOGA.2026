@@ -70,7 +70,7 @@
       itens: ['Todas as equipes disputam o masculino e o feminino. 1 dupla por categoria por equipe: 2 titulares e 1 reserva opcional.', 'Melhor de 3 sets de 6 games, com vantagem tradicional.',
         'Em 6x6 games, tie-break até 7 pontos; em 1x1 em sets, o 3º set é um super tie-break até 10 (diferença mínima de 2).',
         'Saque por baixo ou lateral, com o pé atrás da linha de fundo. Bola laranja homologada pela CBT.', 'Aquecimento de 3 minutos; 1 minuto entre sets; 1 tempo de 30 segundos por set.'], pts: PT_GERAL },
-    'Tênis de Mesa': { b: 'g', tags: ['Masculino', 'Feminino', 'Individual'], quando: '27/10 e 29/10', onde: 'Centro de Treinamento de Tênis de Mesa',
+    'Tênis de Mesa': { b: 'g', tags: ['Masculino', 'Feminino', 'Individual'], quando: '27/10 (masculino) e 29/10 (feminino)', onde: 'Centro de Treinamento de Tênis de Mesa · Rua Inácio Karpinski, 466, Bonsucesso',
       resumo: 'Regras oficiais da CBTM e da Federação de Tênis de Mesa do Paraná.',
       itens: ['Até 4 participantes por naipe por equipe.', 'Melhor de 3 sets; cada set vai até 11 pontos (com 2 pontos de diferença).', 'Saque alternado conforme a regra oficial.'], pts: PT_INDIV },
     'Bocha': { b: 'g', tags: ['Duplas livres'], quando: '27/10', onde: 'Clube Atalaia',
@@ -178,9 +178,9 @@
 
   const AGENDA = [
     ['26/10', 'seg', [['Bolão', 'Clube Atalaia · sorteio na hora'], ['Noite Cultural · 19h', 'Teatro Municipal']]],
-    ['27/10', 'ter', [['Futebol 7', 'Arena Max Atacadista (Arena Tancredão) · 18h30 às 21h30'], ['Voleibol de Quadra', 'Arena Super Muffato (CIE · Pavão) · 19h às 21h30'], ['Bocha', 'Clube Atalaia · sorteio na hora'], ['Tênis de Mesa', 'C.T. de Tênis de Mesa · sorteio na hora']]],
+    ['27/10', 'ter', [['Futebol 7', 'Arena Max Atacadista (Arena Tancredão) · 18h30 às 21h30'], ['Voleibol de Quadra', 'Arena Super Muffato (CIE · Pavão) · 19h às 21h30'], ['Bocha', 'Clube Atalaia · 19h · sorteio na hora'], ['Tênis de Mesa · Masculino', 'C.T. de Tênis de Mesa · R. Inácio Karpinski, 466, Bonsucesso · sorteio na hora']]],
     ['28/10', 'qua', [['Cerimônia de Abertura · 19h', 'Ginásio Joaquim Prestes'], ['Cabo de Guerra', 'Ginásio Joaquim Prestes · a partir das 20h']]],
-    ['29/10', 'qui', [['Futebol 7', 'Arena Max Atacadista (Arena Tancredão) · 18h30 às 21h30'], ['Voleibol de Quadra', 'Arena Super Muffato (CIE · Pavão) · 19h às 21h · finais do feminino'], ['Tênis de Mesa', 'C.T. de Tênis de Mesa']]],
+    ['29/10', 'qui', [['Futebol 7', 'Arena Max Atacadista (Arena Tancredão) · 18h30 às 21h30'], ['Voleibol de Quadra', 'Arena Super Muffato (CIE · Pavão) · 19h às 21h · finais do feminino'], ['Tênis de Mesa · Feminino', 'C.T. de Tênis de Mesa · R. Inácio Karpinski, 466, Bonsucesso · sorteio na hora']]],
     ['30/10', 'sex', [['Recesso', '']]],
     ['02/11', 'seg', [['Feriado', '']]],
     ['03/11', 'ter', [['Futebol 7', 'Arena Max Atacadista (Arena Tancredão) · 18h30 às 21h30'], ['Trilha Noturna', 'Parque das Araucárias']]],
@@ -306,6 +306,8 @@
     'Corrida de Rua e Caminhada': ['Corrida de Rua', 'Caminhada'],
     'Cerimônia de Abertura · 19h': ['Cerimônia de Abertura'],
     'Noite Cultural · 19h': ['Noite Cultural'],
+    'Tênis de Mesa · Masculino': ['Tênis de Mesa'],
+    'Tênis de Mesa · Feminino': ['Tênis de Mesa'],
     'Pesagem dos alimentos': ['Arrecadação de Alimentos'],
     'Último dia da Doação de Sangue': ['Doação de Sangue'],
   };

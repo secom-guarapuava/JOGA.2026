@@ -2,8 +2,8 @@
    JOGA 2026 · PLACAR (classificação geral)
    ---------------------------------------------------------------------
    PARA ATUALIZAR: acrescente um resultado no fim da lista RESULTADOS
-   e troque ATUALIZADO. A tabela, o card do líder e a lista de
-   resultados são montados sozinhos a partir daqui.
+   e troque ATUALIZADO. A tabela, o card do líder, a lista de
+   resultados e a barra fixa do líder são montados sozinhos a partir daqui.
 
    Tipos de resultado:
    - tabela: 'geral' -> colocação vale 20, 17, 15, 14, 13, 12 (Art. 22)
@@ -109,5 +109,27 @@ const PLACAR = {
         <ol class="res__l">${corpo}</ol>${r.obs ? `<p class="res__o">${r.obs}</p>` : ''}</article>`;
     }).join('');
   }
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', render); else render();
+  // barra fixa com a equipe líder: aparece depois do topo, some quando o placar ou o rodapé estão na tela
+  function barra() {
+    const bar = document.getElementById('placarBarra'); if (!bar || !temPontos) return;
+    const lideres = T.filter(t => t.pos === 1); const L = lideres[0];
+    const dot = bar.querySelector('.lbar__c');
+    dot.style.setProperty('--c', lideres.length > 1 ? `linear-gradient(135deg,${lideres.map(t => EQ[t.k].c).join(',')})` : EQ[L.k].c);
+    dot.style.boxShadow = `0 0 0 3px rgba(255,255,255,.85),0 0 22px ${EQ[L.k].c}`;
+    const nome = lideres.length > 1 ? 'Empate: ' + lideres.map(t => EQ[t.k].n).join(' e ') : `Equipe ${EQ[L.k].n}`;
+    bar.querySelector('.lbar__n').textContent = nome;
+    bar.querySelector('.lbar__p').textContent = `${fmt(L.pts)} pts`;
+    bar.setAttribute('aria-label', `Placar geral: ${nome} em 1º, com ${fmt(L.pts)} pontos. Clique para conferir os resultados.`);
+    const sec = document.getElementById('placares'), ft = document.querySelector('footer');
+    const upd = () => {
+      const vh = window.innerHeight, r = sec ? sec.getBoundingClientRect() : null;
+      const noPlacar = r && r.top < vh * .8 && r.bottom > vh * .2;
+      const noRodape = ft && ft.getBoundingClientRect().top < vh - 40;
+      const on = window.scrollY > vh * .6 && !noPlacar && !noRodape;
+      bar.classList.toggle('is-on', on); document.body.classList.toggle('has-lbar', on);
+    };
+    window.addEventListener('scroll', upd, { passive: true }); window.addEventListener('resize', upd); upd();
+  }
+  function init() { render(); barra(); }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init();
 })();
