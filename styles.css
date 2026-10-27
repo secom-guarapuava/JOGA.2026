@@ -1507,6 +1507,14 @@ html.mdl-open{overflow:hidden}
 
 
 /* ============================================================
+   ATUALIZAÇÃO 27/10/2026 — naming com o local real (entre parênteses)
+   ============================================================ */
+.apoio__nm small{display:block;font-size:.9em;letter-spacing:.1em;color:var(--yellow);margin-top:3px}
+.apoio__nm{text-align:center;line-height:1.25;border-radius:16px;bottom:-24px}
+.apoio__item--d{margin-bottom:14px}
+
+
+/* ============================================================
    ATUALIZAÇÃO 26/10/2026 — placar ao vivo (placar.js)
    ============================================================ */
 .stand__c--b{border:1px solid #111}
