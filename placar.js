@@ -7,17 +7,20 @@
 
    Tipos de resultado:
    - tabela: 'geral' -> colocação vale 20, 17, 15, 14, 13, 12 (Art. 22)
-   - tabela: 'show'  -> Show de Talentos: 10, 6, 4, 3, 2, 1 (Manual, 7.1.3)
+   - tabela: 'show'  -> Noite Cultural (Show de Talentos): 10, 6, 4, 3, 2, 1 (Manual, 7.1.3)
    - pontos: { verde: 10, azul: 10 }  -> pontos diretos (participação,
      doação de sangue, alimentos, cerimônia, W.O. = -5, limpeza = -2...)
    Equipes: azul, verde, amarela, branca, preta, laranja.
+   'nota' é o desempenho (nota dos jurados, pinos, tempo...); 'unidade'
+   troca o rótulo: sem unidade aparece "nota 342"; com unidade: "1.026 pontos".
+   'artigo' (o/a) é usado na legenda do Instagram ("a Equipe X venceu a Noite Cultural").
    ===================================================================== */
 const PLACAR = {
-  atualizado: '26/10, 22h30',
+  atualizado: '27/10, 0h45',
   resultados: [
     {
-      titulo: 'Show de Talentos',
-      sub: 'Noite Cultural · Batalha de Dança + Talento Escondido',
+      titulo: 'Noite Cultural', artigo: 'a',
+      sub: 'Batalha de Dança + Talento Escondido',
       data: '26/10', local: 'Teatro Municipal',
       tabela: 'show',
       colocacao: [
@@ -29,6 +32,20 @@ const PLACAR = {
         { eq: 'preta', nota: '270' }
       ],
       obs: 'Nota final: soma das notas dos jurados no Talento Escondido e na Batalha de Dança. Amarela e Azul empataram com 307; a Amarela ficou em 3º no desempate.'
+    },
+    {
+      titulo: 'Bolão',
+      sub: 'Equipes mistas · 4 pistas, 2 passadas',
+      data: '26/10', local: 'Clube Atalaia',
+      tabela: 'geral', unidade: 'pontos',
+      colocacao: [
+        { eq: 'amarela', nota: '1.026' },
+        { eq: 'preta', nota: '1.008' },
+        { eq: 'laranja', nota: '983' },
+        { eq: 'branca', nota: '954' },
+        { eq: 'verde', nota: '951' },
+        { eq: 'azul', nota: '912' }
+      ]
     }
   ]
 };
@@ -85,7 +102,7 @@ const PLACAR = {
 
     const lst = document.getElementById('placarResultados');
     if (lst) lst.innerHTML = linhas.slice().reverse().map(({ r }) => {
-      const corpo = r.colocacao ? r.colocacao.map((c, i) => `<li><span class="res__pos">${i + 1}º</span><span class="res__eq">${chip(c.eq)} ${EQ[c.eq].n}</span>${c.nota ? `<span class="res__nota">${c.nota}</span>` : '<span></span>'}<span class="res__pts">${sinal(c.pontos !== undefined ? c.pontos : (TABELAS[r.tabela || 'geral'][i] || 0))}</span></li>`).join('')
+      const corpo = r.colocacao ? r.colocacao.map((c, i) => `<li><span class="res__pos">${i + 1}º</span><span class="res__eq">${chip(c.eq)} ${EQ[c.eq].n}</span>${c.nota ? `<span class="res__nota">${r.unidade ? `${c.nota} <small>${r.unidade}</small>` : `<small>nota</small> ${c.nota}`}</span>` : '<span></span>'}<span class="res__pts">${sinal(c.pontos !== undefined ? c.pontos : (TABELAS[r.tabela || 'geral'][i] || 0))}</span></li>`).join('')
         : Object.keys(r.pontos).sort((a, b) => r.pontos[b] - r.pontos[a]).map(k => `<li><span class="res__pos">·</span><span class="res__eq">${chip(k)} ${EQ[k].n}</span><span></span><span class="res__pts">${sinal(r.pontos[k])}</span></li>`).join('');
       return `<article class="res">
         <header class="res__h"><div><h4>${r.titulo}</h4>${r.sub ? `<p>${r.sub}</p>` : ''}</div><span class="res__d">${r.data}${r.local ? ' · ' + r.local : ''}</span></header>
