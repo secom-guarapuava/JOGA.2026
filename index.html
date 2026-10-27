@@ -658,46 +658,73 @@
       <p class="lead">A tabela geral acompanha o desempenho de todas as equipes ao longo de toda a competição, com atualizações durante os jogos.</p>
       <div class="live">
         <span class="live__dot"></span>
-        <span>A PARTIR DE 26.10 · ATUALIZAÇÕES DURANTE OS JOGOS</span>
+        <span id="placarAtualizado">AO VIVO · ATUALIZADO EM 26/10, 22H30</span>
       </div>
     </div>
 
     <!-- Card de destaque do líder -->
-    <div class="leader reveal">
+    <div class="leader reveal" id="placarLider">
       <div class="leader__badge">
         <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M7 4h10v3a5 5 0 11-10 0V4zM4 6h3v1a5 5 0 003 4.58V14h-2v6h8v-6h-2v-2.42A5 5 0 0017 7V6h3v3a4 4 0 01-4 4h-.34M4 6v3a4 4 0 004 4h.34" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
         <span>CLASSIFICAÇÃO GERAL</span>
       </div>
       <div class="leader__body">
-        <div class="leader__color" style="--c:conic-gradient(#1F4FB8 0 60deg,#4DAE3F 0 120deg,#F2C30F 0 180deg,#F5F2E9 0 240deg,#0E0E0E 0 300deg,#E94E2C 0)"></div>
+        <div class="leader__color" style="--c:#4DAE3F"></div>
         <div>
-          <h3>A disputa começa em 26.10</h3>
-          <p>Seis equipes, todas zeradas. <strong>Quem sai na frente?</strong></p>
+          <h3>Equipe Verde na frente</h3>
+          <p>Último resultado: <strong>Show de Talentos</strong> (26/10). 1 resultado computado até agora.</p>
         </div>
-        <div class="leader__big">0<span>pts</span></div>
+        <div class="leader__big">10<span>pts</span></div>
       </div>
     </div>
 
     <!-- Tabela de pontuação -->
     <div class="standingsWrap reveal">
-      <table class="standings">
+      <table class="standings standings--pts" id="placarTabela">
         <thead>
-          <tr><th>#</th><th>Equipe</th><th title="Vitórias">V</th><th title="Empates">E</th><th title="Derrotas">D</th><th>Pts</th></tr>
+          <tr><th>#</th><th>Equipe</th><th title="1º lugares (critério de desempate)">1º lugares</th><th>Pts</th></tr>
         </thead>
         <tbody>
-          <tr><td>–</td><td><span class="stand__c" style="--c:#1F4FB8"></span> Azul</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-          <tr><td>–</td><td><span class="stand__c" style="--c:#4DAE3F"></span> Verde</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-          <tr><td>–</td><td><span class="stand__c" style="--c:#F2C30F"></span> Amarelo</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-          <tr><td>–</td><td><span class="stand__c" style="--c:#F5F2E9;border:1px solid #111"></span> Branco</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-          <tr><td>–</td><td><span class="stand__c" style="--c:#0E0E0E"></span> Preto</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-          <tr><td>–</td><td><span class="stand__c" style="--c:#E94E2C"></span> Laranja</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+          <tr class="is-leader">
+      <td>1º</td>
+      <td><span class="stand__c" style="--c:#4DAE3F"></span> Verde</td>
+      <td>1</td>
+      <td>10</td></tr><tr class="">
+      <td>2º</td>
+      <td><span class="stand__c" style="--c:#E94E2C"></span> Laranja</td>
+      <td>0</td>
+      <td>6</td></tr><tr class="">
+      <td>3º</td>
+      <td><span class="stand__c" style="--c:#F2C30F"></span> Amarela</td>
+      <td>0</td>
+      <td>4</td></tr><tr class="">
+      <td>4º</td>
+      <td><span class="stand__c" style="--c:#1F4FB8"></span> Azul</td>
+      <td>0</td>
+      <td>3</td></tr><tr class="">
+      <td>5º</td>
+      <td><span class="stand__c stand__c--b" style="--c:#F5F2E9"></span> Branca</td>
+      <td>0</td>
+      <td>2</td></tr><tr class="">
+      <td>6º</td>
+      <td><span class="stand__c" style="--c:#0E0E0E"></span> Preta</td>
+      <td>0</td>
+      <td>1</td></tr>
         </tbody>
       </table>
-      <p class="standings__note">* A classificação começa a ser atualizada a partir de 26 de outubro, ao longo dos jogos.</p>
+      <p class="standings__note">Pontos por modalidade, do 1º ao 6º lugar: 20, 17, 15, 14, 13 e 12. Show de Talentos: 10, 6, 4, 3, 2 e 1. Empate no geral: vence quem tem mais 1º lugares.</p>
+    </div>
+
+    <!-- Resultados que já contam pontos (montados pelo placar.js) -->
+    <div class="resWrap reveal">
+      <h3 class="resWrap__t">Resultados que já valem pontos</h3>
+      <div class="resList" id="placarResultados"><article class="res">
+        <header class="res__h"><div><h4>Show de Talentos</h4><p>Noite Cultural · Batalha de Dança + Talento Escondido</p></div><span class="res__d">26/10 · Teatro Municipal</span></header>
+        <ol class="res__l"><li><span class="res__pos">1º</span><span class="res__eq"><span class="stand__c" style="--c:#4DAE3F"></span> Verde</span><span class="res__nota">342</span><span class="res__pts">+10</span></li><li><span class="res__pos">2º</span><span class="res__eq"><span class="stand__c" style="--c:#E94E2C"></span> Laranja</span><span class="res__nota">338,5</span><span class="res__pts">+6</span></li><li><span class="res__pos">3º</span><span class="res__eq"><span class="stand__c" style="--c:#F2C30F"></span> Amarela</span><span class="res__nota">307</span><span class="res__pts">+4</span></li><li><span class="res__pos">4º</span><span class="res__eq"><span class="stand__c" style="--c:#1F4FB8"></span> Azul</span><span class="res__nota">307</span><span class="res__pts">+3</span></li><li><span class="res__pos">5º</span><span class="res__eq"><span class="stand__c stand__c--b" style="--c:#F5F2E9"></span> Branca</span><span class="res__nota">286</span><span class="res__pts">+2</span></li><li><span class="res__pos">6º</span><span class="res__eq"><span class="stand__c" style="--c:#0E0E0E"></span> Preta</span><span class="res__nota">270</span><span class="res__pts">+1</span></li></ol><p class="res__o">Nota final: soma das notas dos jurados no Talento Escondido e na Batalha de Dança. Amarela e Azul empataram com 307; a Amarela ficou em 3º no desempate.</p></article></div>
     </div>
 
     <p class="datebanner reveal">
-      <span>DE</span> <strong>26.10</strong> <span>A</span> <strong>14.11</strong> · <em>vem aí.</em>
+      <span>DE</span> <strong>26.10</strong> <span>A</span> <strong>14.11</strong> · <em>em jogo.</em>
     </p>
   </div>
 </section>
@@ -852,5 +879,6 @@
 
 <script src="script.js"></script>
 <script src="modalidades.js"></script>
+<script src="placar.js"></script>
 </body>
 </html>
