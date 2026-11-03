@@ -16,7 +16,7 @@
    'artigo' (o/a) é usado na legenda do Instagram ("a Equipe X venceu a Noite Cultural").
    ===================================================================== */
 const PLACAR = {
-  atualizado: '28/10, 10h45',
+  atualizado: '03/11, 16h15',
   resultados: [
     {
       titulo: 'Noite Cultural', artigo: 'a',
@@ -66,6 +66,34 @@ const PLACAR = {
         { eq: 'preta' }, { eq: 'azul' }, { eq: 'amarela' },
         { eq: 'laranja' }, { eq: 'branca' }, { eq: 'verde' }
       ]
+    },
+    {
+      titulo: 'Cerimônia de Abertura', artigo: 'a',
+      sub: 'Animação, disciplina e participação',
+      data: '28/10', local: 'Arena Ilumina Guarapuava (Ginásio Joaquim Prestes)',
+      pontos: { azul: 30, verde: 30, amarela: 30, branca: 30, preta: 30, laranja: 30 },
+      obs: 'As seis equipes somaram os 30 pontos da Cerimônia de Abertura.'
+    },
+    {
+      titulo: 'Cabo de Guerra', artigo: 'o',
+      sub: 'Masculino',
+      data: '28/10', local: 'Arena Ilumina Guarapuava (Ginásio Joaquim Prestes)',
+      tabela: 'geral',
+      colocacao: [
+        { eq: 'preta' }, { eq: 'branca' }, { eq: 'laranja' }, { eq: 'azul' }, { eq: 'amarela' }
+      ],
+      obs: 'A Equipe Verde não se inscreveu no masculino e não pontua.'
+    },
+    {
+      titulo: 'Cabo de Guerra', artigo: 'o',
+      sub: 'Feminino',
+      data: '28/10', local: 'Arena Ilumina Guarapuava (Ginásio Joaquim Prestes)',
+      tabela: 'geral',
+      colocacao: [
+        { eq: 'laranja' }, { eq: 'azul' }, { eq: 'amarela' }, { eq: 'verde' }, { eq: 'branca' }
+      ],
+      pontos: { preta: -5 }, rotulo: { preta: 'W.O.' },
+      obs: 'A Equipe Preta não compareceu (W.O.) e perde 5 pontos.'
     }
   ]
 };
@@ -122,11 +150,12 @@ const PLACAR = {
 
     const lst = document.getElementById('placarResultados');
     if (lst) lst.innerHTML = linhas.slice().reverse().map(({ r }) => {
+      const extra = (r.colocacao && r.pontos) ? Object.keys(r.pontos).map(k => `<li class="res__x"><span class="res__pos">·</span><span class="res__eq">${chip(k)} ${EQ[k].n}</span><span class="res__nota"><small>${(r.rotulo && r.rotulo[k]) || ''}</small></span><span class="res__pts">${sinal(r.pontos[k])}</span></li>`).join('') : '';
       const corpo = r.colocacao ? r.colocacao.map((c, i) => `<li><span class="res__pos">${i + 1}º</span><span class="res__eq">${chip(c.eq)} ${EQ[c.eq].n}</span>${c.nota ? `<span class="res__nota">${r.unidade ? `${c.nota} <small>${r.unidade}</small>` : `<small>nota</small> ${c.nota}`}</span>` : '<span></span>'}<span class="res__pts">${sinal(c.pontos !== undefined ? c.pontos : (TABELAS[r.tabela || 'geral'][i] || 0))}</span></li>`).join('')
         : Object.keys(r.pontos).sort((a, b) => r.pontos[b] - r.pontos[a]).map(k => `<li><span class="res__pos">·</span><span class="res__eq">${chip(k)} ${EQ[k].n}</span><span></span><span class="res__pts">${sinal(r.pontos[k])}</span></li>`).join('');
       return `<article class="res">
         <header class="res__h"><div><h4>${r.titulo}</h4>${r.sub ? `<p>${r.sub}</p>` : ''}</div><span class="res__d">${r.data}${r.local ? ' · ' + r.local : ''}</span></header>
-        <ol class="res__l">${corpo}</ol>${r.obs ? `<p class="res__o">${r.obs}</p>` : ''}</article>`;
+        <ol class="res__l">${corpo}${extra}</ol>${r.obs ? `<p class="res__o">${r.obs}</p>` : ''}</article>`;
     }).join('');
   }
   // barra fixa com a equipe líder: aparece depois do topo, some quando o placar ou o rodapé estão na tela
