@@ -1,7 +1,7 @@
 /* ============================================================
    JOGA 2026 — janelas (pop-ups) de cada modalidade e da programação
    Fonte: Regulamento Geral homologado no Congresso Técnico (22/10/2026), Ata do Congresso,
-   Informativos 002, 003, 004 e 005 (retomada, 03/11/2026), Cronograma oficial e tabela de jogos da Secretaria de Esportes (programação de 03/11/2026). Para atualizar uma regra, edite só este arquivo.
+   Informativos 002, 003, 004, 005 (retomada, 03/11/2026) e 006 (Caminhada Noturna e Rapel), Cronograma oficial e tabela de jogos da Secretaria de Esportes (programação de 03/11/2026). Para atualizar uma regra, edite só este arquivo.
    ============================================================ */
 (() => {
   const INSCRICAO = 'https://inscricoesgdc.com.br/?param=7288';
@@ -107,18 +107,18 @@
       itens: ['Participação livre para filhos de servidores municipais, de 2 a 14 anos.', 'É preciso a autorização do responsável legal.',
         'Data, local e percurso serão divulgados pela organização. Acompanhe o site, o Instagram e o coordenador da sua equipe.'],
       quem: 'A Corrida Kids é a única atividade aberta a quem não é servidor: os filhos dos servidores municipais, de 2 a 14 anos, com autorização do responsável legal.' },
-    'Rapel': { b: 'y', tags: ['Misto', 'Participação'], quando: 'Nova data a confirmar', onde: 'Praça da Fé',
+    'Rapel': { b: 'y', tags: ['Misto', 'Participação', 'Descida individual'], quando: '10/11 (terça) · concentração a partir das 18h30 · 1ª descida às 19h', onde: 'Praça da Fé',
       resumo: 'Atividade de participação e integração, sem disputa de tempo ou desempenho.',
       itens: ['Exatamente 7 participantes por equipe, divididos em turnos: com menos de 7 a equipe não pontua, e não pode passar de 7. Uma descida por pessoa.',
         'A organização fornece capacete, cadeirinha, freio oito e luvas. Obrigatório usar calça comprida e tênis (shorts não é permitido); cabelo comprido, preso com elástico.', 'É atividade em altura: avalie as suas condições de saúde antes de se inscrever.',
         'Siga todas as orientações dos instrutores. Proibido descer com objetos nas mãos ou acessórios soltos.', 'Proibido consumir bebida alcoólica ou qualquer entorpecente antes ou durante a atividade.',
-        'Em caso de chuva, vento forte ou raios, a atividade pode ser adiada pela organização.'],
+        'Em caso de mau tempo, a Coordenação Geral informa o cancelamento da atividade.'],
       pts: 'A equipe garante 10 pontos fixos no ranking geral só com a participação dos 7 integrantes inscritos; com menos de 7, não pontua.' },
-    'Trilha Noturna': { b: 'y', tags: ['Misto', 'Participação'], quando: 'Nova data a confirmar', onde: 'Parque das Araucárias',
-      resumo: 'Atividade de participação e integração, sem caráter competitivo.',
-      itens: ['1 grupo misto por equipe, com até 20 participantes. Percurso de cerca de 2 km.', 'Obrigatório: iluminação individual (pode ser a lanterna do celular), roupa confortável e calçado fechado.',
+    'Caminhada Noturna': { b: 'y', tags: ['Misto', 'Participação', 'Nível iniciante'], quando: '05/11 (quinta) · concentração a partir das 18h30 · saída às 19h', onde: 'Parque das Araucárias · ponto de encontro no estacionamento principal',
+      resumo: 'Atividade de participação e integração, sem caráter competitivo (a Trilha Noturna do regulamento).',
+      itens: ['1 grupo misto por equipe, com até 20 participantes. Percurso de cerca de 2,8 km, nível iniciante.', 'Obrigatório: iluminação individual (pode ser a lanterna do celular), roupa confortável e calçado fechado.',
         'Percurso definido e acompanhado por monitores. Chegue no horário: quem não acompanhar todo o protocolo de segurança não participa. Termo de responsabilidade obrigatório.',
-        'Proibido correr, se afastar do grupo, usar fone de ouvido ou beber.', 'Em caso de chuva, vento forte ou raios, a atividade não acontece; a organização avisa por nota técnica no dia.'],
+        'Proibido correr, se afastar do grupo, usar fone de ouvido ou beber.', 'Em caso de mau tempo, a Coordenação Geral informa o cancelamento da atividade.'],
       pts: 'A equipe garante 10 pontos fixos no ranking geral quando pelo menos 15 integrantes concluem o percurso, com conferência presencial.' },
     'Xadrez': { b: 'k', tags: ['Misto', 'Individual'], quando: '05/11 · 19h', onde: 'Clube Atalaia',
       resumo: 'Regras da FIDE combinadas com o regulamento do JOGA.',
@@ -185,10 +185,10 @@
     ['02/11', 'seg', [['Feriado', '']]],
     ['03/11', 'ter', [['Pausa', '']]],
     ['04/11', 'qua', [['Futebol 7', 'Arena Max Atacadista (Arena Tancredão) · 18h30 às 21h30'], ['Caçador/Queimada', 'Arena Ilumina Guarapuava (Ginásio Joaquim Prestes) · 18h30 às 22h15'], ['Tênis de Mesa · Feminino', 'C.T. de Tênis de Mesa · R. Inácio Karpinski, 466, Bonsucesso · 19h · sorteio na hora']]],
-    ['05/11', 'qui', [['Voleibol de Quadra', 'Arena Super Muffato (CIE · Pavão) · 19h às 21h · semifinais do feminino'], ['Sinuca, Truco e Xadrez', 'Clube Atalaia · 19h · sorteio na hora']]],
+    ['05/11', 'qui', [['Voleibol de Quadra', 'Arena Super Muffato (CIE · Pavão) · 19h às 21h · semifinais do feminino'], ['Sinuca, Truco e Xadrez', 'Clube Atalaia · 19h · sorteio na hora'], ['Caminhada Noturna', 'Parque das Araucárias · concentração 18h30 · saída 19h']]],
     ['06/11', 'sex', [['Futebol 7', 'Arena Max Atacadista (Arena Tancredão) · 18h30 às 21h30'], ['Voleibol de Quadra', 'Arena Super Muffato (CIE · Pavão) · 19h às 20h30 · finais do feminino']]],
     ['09/11', 'seg', [['Futebol 7', 'Arena Max Atacadista (Arena Tancredão) · 18h30 às 21h30 · semifinais do Geral'], ['Futsal Feminino', 'Arena Consulta Já (Ginásio Santa Teresinha) · 19h']]],
-    ['10/11', 'ter', [['Futsal Feminino', 'Arena Consulta Já (Ginásio Santa Teresinha) · 19h'], ['Basquete 3x3', 'Espaço Cidadão Santana (Ginásio Santana) · 19h às 21h30']]],
+    ['10/11', 'ter', [['Futsal Feminino', 'Arena Consulta Já (Ginásio Santa Teresinha) · 19h'], ['Basquete 3x3', 'Espaço Cidadão Santana (Ginásio Santana) · 19h às 21h30'], ['Rapel', 'Praça da Fé · concentração 18h30 · 1ª descida 19h']]],
     ['11/11', 'qua', [['Futebol 7', 'Arena Max Atacadista (Arena Tancredão) · 18h30 às 21h30 · finais do Geral'], ['Futsal Feminino', 'Arena Consulta Já (Ginásio Santa Teresinha) · 19h'], ['Basquete 3x3', 'Espaço Cidadão Santana (Ginásio Santana) · 19h às 20h15 · finais do feminino']]],
     ['12/11', 'qui', [['Futsal Feminino', 'Arena Consulta Já (Ginásio Santa Teresinha) · 19h · semifinais'], ['Vôlei de Areia 4x4', 'Arena ATV · 19h às 21h'], ['Beach Tennis', 'Arena ATV · 19h às 22h'], ['Pesagem dos alimentos', 'Arrecadação Solidária'], ['Último dia da Doação de Sangue', 'Hemocentro']]],
     ['13/11', 'sex', [['Futsal Feminino', 'Arena Consulta Já (Ginásio Santa Teresinha) · 19h · 3º lugar e final']]],
@@ -210,7 +210,7 @@
   };
 
   const slug = s => 'mod-' + s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
-  const SLUGS = {}; Object.keys(M).forEach(k => SLUGS[slug(k)] = k); SLUGS['mod-programacao'] = '__programacao';
+  const SLUGS = {}; Object.keys(M).forEach(k => SLUGS[slug(k)] = k); SLUGS['mod-programacao'] = '__programacao'; SLUGS['mod-trilha-noturna'] = 'Caminhada Noturna';
 
   const IC = {
     cal: '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3 10h18M8 3v4M16 3v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>',
@@ -316,7 +316,7 @@
     ['Futebol 7', ['Futebol 7 Geral', 'Futebol 7 Veteranos']], ['Futsal Feminino', ['Futsal Feminino']], ['Voleibol de Quadra', ['Voleibol de Quadra']],
     ['Vôlei de Areia 4x4', ['Vôlei de Areia 4x4']], ['Basquete 3x3', ['Basquete 3x3 Geral', 'Basquete 3x3 Veteranos']], ['Cabo de Guerra', ['Cabo de Guerra']],
     ['Caçador/Queimada', ['Caçador/Queimada']], ['Beach Tennis', ['Beach Tennis']], ['Tênis de Mesa', ['Tênis de Mesa']], ['Bocha', ['Bocha']], ['Bolão', ['Bolão']],
-    ['Sinuca', ['Sinuca']], ['Truco', ['Truco']], ['Xadrez', ['Xadrez']], ['Caminhada', ['Caminhada']], ['Corrida de Rua', ['Corrida de Rua']],
+    ['Sinuca', ['Sinuca']], ['Truco', ['Truco']], ['Xadrez', ['Xadrez']], ['Caminhada', ['Caminhada']], ['Corrida de Rua', ['Corrida de Rua']], ['Rapel', ['Rapel']], ['Caminhada Noturna', ['Caminhada Noturna']],
     ['Noite Cultural', ['Noite Cultural']], ['Cerimônia de Abertura', ['Cerimônia de Abertura']],
     ['Doação de Sangue', ['Doação de Sangue']], ['Arrecadação de Alimentos', ['Arrecadação de Alimentos']],
   ];
