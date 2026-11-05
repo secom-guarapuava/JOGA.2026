@@ -16,7 +16,7 @@
    'artigo' (o/a) é usado na legenda do Instagram ("a Equipe X venceu a Noite Cultural").
    ===================================================================== */
 const PLACAR = {
-  atualizado: '03/11, 16h15',
+  atualizado: '05/11, 13h',
   resultados: [
     {
       titulo: 'Noite Cultural', artigo: 'a',
@@ -65,7 +65,8 @@ const PLACAR = {
       colocacao: [
         { eq: 'preta' }, { eq: 'azul' }, { eq: 'amarela' },
         { eq: 'laranja' }, { eq: 'branca' }, { eq: 'verde' }
-      ]
+      ],
+      obs: 'Pódio individual: Germano Toledo Alves (Preta), Guilherme Rafael de Souza (Azul) e Willey Kozlik Silva (Amarela).'
     },
     {
       titulo: 'Cerimônia de Abertura', artigo: 'a',
@@ -91,6 +92,38 @@ const PLACAR = {
       tabela: 'geral',
       colocacao: [
         { eq: 'laranja' }, { eq: 'azul' }, { eq: 'amarela' }, { eq: 'verde' }, { eq: 'branca' }
+      ],
+      pontos: { preta: -5 }, rotulo: { preta: 'W.O.' },
+      obs: 'A Equipe Preta não compareceu (W.O.) e perde 5 pontos.'
+    },
+    {
+      titulo: 'Tênis de Mesa', artigo: 'o',
+      sub: 'Feminino',
+      data: '04/11', local: 'C.T. de Tênis de Mesa',
+      tabela: 'geral',
+      colocacao: [
+        { eq: 'laranja' }, { eq: 'preta' }, { eq: 'azul' },
+        { eq: 'verde' }, { eq: 'amarela' }, { eq: 'branca' }
+      ],
+      obs: 'Pódio individual: Cristiane Dominico Lacerda (Preta), Jaqueline do C. Chamberlain (Laranja) e Jessica Kiczevi (Laranja).'
+    },
+    {
+      titulo: 'Caçador/Queimada', artigo: 'o',
+      sub: 'Masculino',
+      data: '04/11', local: 'Arena Ilumina Guarapuava (Ginásio Joaquim Prestes)',
+      tabela: 'geral',
+      colocacao: [
+        { eq: 'laranja' }, { eq: 'azul' }, { eq: 'amarela' }, { eq: 'preta' }, { eq: 'branca' }
+      ],
+      obs: 'A Equipe Verde não disputou o masculino e não pontua.'
+    },
+    {
+      titulo: 'Caçador/Queimada', artigo: 'o',
+      sub: 'Feminino',
+      data: '04/11', local: 'Arena Ilumina Guarapuava (Ginásio Joaquim Prestes)',
+      tabela: 'geral',
+      colocacao: [
+        { eq: 'verde' }, { eq: 'laranja' }, { eq: 'branca' }, { eq: 'amarela' }, { eq: 'azul' }
       ],
       pontos: { preta: -5 }, rotulo: { preta: 'W.O.' },
       obs: 'A Equipe Preta não compareceu (W.O.) e perde 5 pontos.'
