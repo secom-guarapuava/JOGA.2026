@@ -16,7 +16,7 @@
    'artigo' (o/a) é usado na legenda do Instagram ("a Equipe X venceu a Noite Cultural").
    ===================================================================== */
 const PLACAR = {
-  atualizado: '05/11, 13h',
+  atualizado: '06/11, 17h',
   resultados: [
     {
       titulo: 'Noite Cultural', artigo: 'a',
@@ -127,6 +127,53 @@ const PLACAR = {
       ],
       pontos: { preta: -5 }, rotulo: { preta: 'W.O.' },
       obs: 'A Equipe Preta não compareceu (W.O.) e perde 5 pontos.'
+    },
+    {
+      titulo: 'Sinuca', artigo: 'a',
+      sub: 'Duplas masculinas, femininas e mistas',
+      data: '05/11', local: 'Clube Atalaia',
+      tabela: 'geral',
+      colocacao: [
+        { eq: 'azul' }, { eq: 'laranja' }, { eq: 'preta' },
+        { eq: 'verde' }, { eq: 'branca' }, { eq: 'amarela' }
+      ]
+    },
+    {
+      titulo: 'Truco', artigo: 'o',
+      sub: 'Duplas',
+      data: '05/11', local: 'Clube Atalaia',
+      tabela: 'geral',
+      colocacao: [
+        { eq: 'laranja' }, { eq: 'preta' }, { eq: 'branca' },
+        { eq: 'azul' }, { eq: 'amarela' }, { eq: 'verde' }
+      ]
+    },
+    {
+      titulo: 'Xadrez', artigo: 'o',
+      sub: 'Masculino',
+      data: '05/11', local: 'Clube Atalaia',
+      tabela: 'geral',
+      colocacao: [
+        { eq: 'laranja' }, { eq: 'azul' }, { eq: 'amarela' },
+        { eq: 'verde' }, { eq: 'branca' }, { eq: 'preta' }
+      ]
+    },
+    {
+      titulo: 'Xadrez', artigo: 'o',
+      sub: 'Feminino',
+      data: '05/11', local: 'Clube Atalaia',
+      tabela: 'geral',
+      colocacao: [
+        { eq: 'amarela' }, { eq: 'verde' }, { eq: 'laranja' },
+        { eq: 'azul' }, { eq: 'preta' }, { eq: 'branca' }
+      ]
+    },
+    {
+      titulo: 'Caminhada Noturna', artigo: 'a',
+      sub: 'Parque das Araucárias',
+      data: '05/11', local: 'Parque das Araucárias',
+      pontos: { azul: 10, verde: 10, amarela: 10, branca: 10, preta: 10, laranja: 10 },
+      obs: 'As seis equipes somaram os 10 pontos da Caminhada Noturna.'
     }
   ]
 };
