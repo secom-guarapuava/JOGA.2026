@@ -192,7 +192,7 @@
     ['11/11', 'qua', [['Futebol 7', 'Arena Max Atacadista (Campo sintético da Polícia Militar) · 18h30 às 21h30 · semifinais do Geral'], ['Futsal Feminino', 'Arena Consulta Já (Ginásio Santa Teresinha) · 19h'], ['Basquete 3x3', 'Espaço Cidadão Santana (Ginásio Santana) · 19h às 20h15 · finais do feminino']]],
     ['12/11', 'qui', [['Futsal Feminino', 'Arena Consulta Já (Ginásio Santa Teresinha) · 19h · semifinais'], ['Vôlei de Areia 4x4', 'Arena ATV · 19h às 21h'], ['Beach Tennis', 'Arena ATV · 19h às 22h'], ['Pesagem dos alimentos', 'Arrecadação Solidária'], ['Último dia da Doação de Sangue', 'Hemocentro']]],
     ['13/11', 'sex', [['Futebol 7', 'Arena Max Atacadista (Campo sintético da Polícia Militar) · 18h30 às 21h30 · 3º lugar e final do Geral'], ['Futsal Feminino', 'Arena Consulta Já (Ginásio Santa Teresinha) · 19h · 3º lugar e final']]],
-    ['14/11', 'sáb', [['Corrida de Rua e Caminhada', 'Arena Ilumina Guarapuava (Ginásio Joaquim Prestes) · largada às 8h'], ['Encerramento · 9h', 'Arena Ilumina Guarapuava (Ginásio Joaquim Prestes) · resultados e premiação']]],
+    ['14/11', 'sáb', [['Corrida de Rua e Caminhada', 'Arena Ilumina Guarapuava (Ginásio Joaquim Prestes) · largada às 8h'], ['Encerramento · 9h', 'Salão Verde do Parque Lacerda Werneck · resultados e premiação']]],
   ];
 
 
