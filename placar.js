@@ -16,7 +16,7 @@
    'artigo' (o/a) é usado na legenda do Instagram ("a Equipe X venceu a Noite Cultural").
    ===================================================================== */
 const PLACAR = {
-  atualizado: '10/11, 15h45',
+  atualizado: '11/11, 14h30',
   resultados: [
     {
       titulo: 'Noite Cultural', artigo: 'a',
@@ -195,6 +195,17 @@ const PLACAR = {
         { eq: 'verde' }, { eq: 'amarela' }, { eq: 'branca' },
         { eq: 'azul' }, { eq: 'laranja' }, { eq: 'preta' }
       ]
+    },
+    {
+      titulo: 'Basquete 3x3', artigo: 'o',
+      sub: 'Veteranos (+40)',
+      data: '10/11', local: 'Espaço Cidadão Santana (Ginásio Santana)',
+      tabela: 'geral',
+      colocacao: [
+        { eq: 'branca' }, { eq: 'azul' }, { eq: 'preta' }, { eq: 'laranja' }
+      ],
+      pontos: { verde: -5 }, rotulo: { verde: 'W.O.' },
+      obs: 'A Equipe Amarela não se inscreveu no Veteranos. A Equipe Verde não compareceu (W.O.) e perde 5 pontos.'
     }
   ]
 };
