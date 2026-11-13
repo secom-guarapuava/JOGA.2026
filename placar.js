@@ -16,7 +16,7 @@
    'artigo' (o/a) é usado na legenda do Instagram ("a Equipe X venceu a Noite Cultural").
    ===================================================================== */
 const PLACAR = {
-  atualizado: '12/11, 11h',
+  atualizado: '13/11, 9h',
   resultados: [
     {
       titulo: 'Noite Cultural', artigo: 'a',
@@ -233,6 +233,35 @@ const PLACAR = {
         { eq: 'branca' }, { eq: 'laranja' }, { eq: 'amarela' }, { eq: 'azul' }, { eq: 'verde' }
       ],
       obs: 'A Equipe Preta não pontua no feminino.'
+    },
+    {
+      titulo: 'Vôlei de Areia 4x4', artigo: 'o',
+      sub: 'Misto',
+      data: '12/11', local: 'Arena ATV',
+      tabela: 'geral',
+      colocacao: [
+        { eq: 'azul' }, { eq: 'verde' }, { eq: 'laranja' }, { eq: 'branca' }, { eq: 'amarela' }, { eq: 'preta' }
+      ]
+    },
+    {
+      titulo: 'Beach Tennis', artigo: 'o',
+      sub: 'Masculino · Duplas',
+      data: '12/11', local: 'Arena ATV',
+      tabela: 'geral',
+      colocacao: [
+        { eq: 'laranja' }, { eq: 'verde' }, { eq: 'branca' }, { eq: 'azul' }, { eq: 'preta' }
+      ],
+      pontos: { amarela: -5 }, rotulo: { amarela: 'W.O.' },
+      obs: 'A Equipe Amarela não compareceu (W.O.) e perde 5 pontos.'
+    },
+    {
+      titulo: 'Beach Tennis', artigo: 'o',
+      sub: 'Feminino · Duplas',
+      data: '12/11', local: 'Arena ATV',
+      tabela: 'geral',
+      colocacao: [
+        { eq: 'verde' }, { eq: 'amarela' }, { eq: 'preta' }, { eq: 'azul' }, { eq: 'branca' }, { eq: 'laranja' }
+      ]
     }
   ]
 };
