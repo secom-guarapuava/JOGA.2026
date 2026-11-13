@@ -1621,3 +1621,63 @@ html.mdl-open{overflow:hidden}
   .lbar__go{flex:1 1 100%;justify-content:center;font-size:13px;padding:10px 14px}
   body.has-lbar .toTop{bottom:132px}
 }
+/* ============================================================
+   ATUALIZAÇÃO 13/11/2026 — reta final: hero com contagem para o Encerramento, cards Sexta (finais) e Sábado (encerramento)
+   ============================================================ */
+.cdk{margin:22px 0 2px;font-size:12px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--yellow)}
+.cdk[hidden]{display:none}
+.hlGrid--rf{align-items:stretch}
+.hlGrid--rf .hl{gap:12px}
+.rf__list{list-style:none;display:flex;flex-direction:column;gap:10px;margin-top:4px}
+.rf__list li{display:grid;grid-template-columns:1fr;gap:3px;background:rgba(0,0,0,.2);border-radius:14px;padding:12px 16px}
+.rf__m{display:flex;flex-direction:column;gap:2px}
+.rf__m b{font-family:var(--fDisp);font-weight:400;font-size:24px;line-height:1.05;text-transform:uppercase;letter-spacing:.01em}
+.rf__m small{font-size:12.5px;font-weight:600;color:rgba(255,255,255,.78)}
+.rf__h{font-size:14.5px;line-height:1.4;color:rgba(255,255,255,.94)}
+.rf__h b{color:var(--yellow)}
+.hl__tl{list-style:none;display:flex;flex-direction:column;gap:4px;margin-top:2px}
+.hl__tl li{display:grid;grid-template-columns:62px 1fr;gap:12px;align-items:baseline;padding:5px 0;border-bottom:1px solid rgba(255,255,255,.16)}
+.hl__tl li:last-child{border-bottom:0}
+.hl__tl b{font-family:var(--fDisp);font-weight:400;font-size:22px;line-height:1;color:var(--yellow)}
+.hl__tl span{font-size:15px;font-weight:700;line-height:1.3}
+.hl__tl small{display:block;font-weight:500;font-size:12.5px;color:rgba(255,255,255,.8);margin-top:1px}
+.hl__tl li.is-hl{background:rgba(0,0,0,.24);border-radius:12px;border-bottom:0;padding:9px 12px;margin:4px -12px}
+.hl__tl li.is-hl span{color:#fff}
+.placares .lead b{color:var(--orange)}
+/* ============================================================
+   ATUALIZAÇÃO 13/11/2026 — galeria "Confira as fotos" (13 fotos, duas por equipe)
+   ============================================================ */
+.fotos{background:var(--yellow);color:#111;position:relative;overflow:hidden}
+.fotos .eyebrow{color:#111}
+.fotos .lead{color:#2a2200}
+.fotos__head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px 40px;flex-wrap:wrap;margin-bottom:34px}
+.fotos__head > div:first-child{max-width:660px}
+.fotos__btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn--ink{background:#111;color:#fff;box-shadow:0 12px 24px rgba(0,0,0,.18)}
+.btn--ink:hover{background:var(--orange);color:#fff;transform:translateY(-3px)}
+.btn--inkline{border:2px solid #111;color:#111}
+.btn--inkline:hover{background:#111;color:#fff}
+.gal{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:clamp(110px,11.4vw,168px);grid-auto-flow:dense;gap:12px}
+.gal__i{position:relative;grid-row:span 2;border-radius:18px;overflow:hidden;background:#111;box-shadow:0 18px 30px -18px rgba(0,0,0,.6);isolation:isolate}
+.gal__i--h{grid-column:span 2}
+.gal__i img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s ease}
+.gal__i:hover img{transform:scale(1.05)}
+.gal__i:focus-visible{outline:3px solid #111;outline-offset:3px}
+.gal__c{position:absolute;left:10px;bottom:10px;display:inline-flex;align-items:center;gap:9px;max-width:calc(100% - 20px);background:rgba(14,14,14,.8);color:#fff;border-radius:14px;
+  padding:7px 12px 7px 9px;line-height:1.15;backdrop-filter:blur(4px)}
+.gal__c > span{display:flex;flex-direction:column;min-width:0}
+.gal__c b{font-family:var(--fDisp);font-weight:400;font-size:17px;letter-spacing:.02em;text-transform:uppercase}
+.gal__c small{font-size:11px;font-weight:700;color:rgba(255,255,255,.8);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.gal__c i{flex:none;width:12px;height:12px;border-radius:50%;background:var(--c);box-shadow:0 0 0 2px rgba(255,255,255,.75)}
+.gal__c i.all{background:conic-gradient(#4DAE3F 0 60deg,#1F4FB8 0 120deg,#F2C30F 0 180deg,#E94E2C 0 240deg,#F5F2E9 0 300deg,#0E0E0E 0)}
+.gal__hint{display:none}
+@media(max-width:980px){.gal{grid-template-columns:repeat(4,1fr);grid-auto-rows:clamp(110px,17vw,170px)}}
+@media(max-width:680px){
+  .gal{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding:0 20px;gap:10px;margin:0 -20px;padding:0 20px 10px;scrollbar-width:none}
+  .gal::-webkit-scrollbar{display:none}
+  .gal__i{flex:0 0 62vw;height:84vw;max-height:440px;scroll-snap-align:start}
+  .gal__i--h{flex-basis:84vw}
+  .gal__hint{display:flex;align-items:center;gap:8px;margin-top:12px;font-size:13px;font-weight:800;letter-spacing:.04em;color:#2a2200}
+}
+.btn--yel{background:var(--yellow);color:#111;box-shadow:0 12px 24px rgba(0,0,0,.18)}
+.btn--yel:hover{background:#fff;color:#111;transform:translateY(-3px)}

@@ -102,10 +102,10 @@
         'Percurso: largada no Parque Lacerda Werneck, Rua das Rosas, Rua Brigadeiro Rocha, Rua Professor Becker, volta na Lagoa das Lágrimas, Rua Alcione Bastos e Avenida Manoel Ribas, com chegada no parque.',
         'Troféus do 1º ao 5º lugar e medalha para quem concluir.'],
       pts: 'A equipe garante 10 pontos quando 30 inscritos concluem a prova. Em cada categoria, os 8 primeiros somam pontos para a equipe (1º 11 … 8º 1), e a equipe com mais pontos vence a categoria no ranking geral.' },
-    'Corrida Kids': { b: 'o', tags: ['Filhos de servidores', '2 a 14 anos'], quando: 'A confirmar', onde: 'A confirmar',
+    'Corrida Kids': { b: 'o', tags: ['Filhos de servidores', '2 a 14 anos'], quando: '14/11 · 9h30, no Encerramento', onde: 'Salão Verde do Parque Lacerda Werneck',
       resumo: 'Corrida para os filhos dos servidores municipais, de 2 a 14 anos.',
       itens: ['Participação livre para filhos de servidores municipais, de 2 a 14 anos.', 'É preciso a autorização do responsável legal.',
-        'Data, local e percurso serão divulgados pela organização. Acompanhe o site, o Instagram e o coordenador da sua equipe.'],
+        'Acontece no sábado, 14/11, às 9h30, durante o Encerramento no Parque Lacerda Werneck.'],
       quem: 'A Corrida Kids é a única atividade aberta a quem não é servidor: os filhos dos servidores municipais, de 2 a 14 anos, com autorização do responsável legal.' },
     'Rapel': { b: 'y', tags: ['Misto', 'Participação', 'Descida individual'], quando: '10/11 (terça) · confirmado · concentração a partir das 18h30 · início às 19h', onde: 'Praça da Fé · R. Arival Ribas Cramer, 120-126, Dos Estados',
       resumo: 'Atividade de participação e integração, sem disputa de tempo ou desempenho.',
@@ -192,7 +192,7 @@
     ['11/11', 'qua', [['Futebol 7', 'Arena Max Atacadista (Campo sintético da Polícia Militar) · 18h30 às 21h30 · semifinais do Geral'], ['Futsal Feminino', 'Arena Consulta Já (Ginásio Santa Teresinha) · 19h'], ['Basquete 3x3', 'Espaço Cidadão Santana (Ginásio Santana) · 19h às 20h15 · finais do feminino']]],
     ['12/11', 'qui', [['Futsal Feminino', 'Arena Consulta Já (Ginásio Santa Teresinha) · 19h · semifinais'], ['Vôlei de Areia 4x4', 'Arena ATV · 19h às 22h · programação atualizada'], ['Beach Tennis', 'Arena ATV · 19h às 22h'], ['Pesagem dos alimentos', 'Arrecadação Solidária'], ['Último dia da Doação de Sangue', 'Hemocentro']]],
     ['13/11', 'sex', [['Futebol 7', 'Arena Max Atacadista (Campo sintético da Polícia Militar) · 18h30 às 21h30 · 3º lugar e final do Geral'], ['Futsal Feminino', 'Arena Consulta Já (Ginásio Santa Teresinha) · 19h · 3º lugar e final']]],
-    ['14/11', 'sáb', [['Corrida de Rua e Caminhada', 'Parque Lacerda Werneck (Salão Verde) · largada às 8h'], ['Encerramento · 9h', 'Salão Verde do Parque Lacerda Werneck · resultados e premiação']]],
+    ['14/11', 'sáb', [['Corrida de Rua e Caminhada', 'Parque Lacerda Werneck (Salão Verde) · concentração das 7h às 7h30 · largada às 8h'], ['Corrida Kids', 'Salão Verde do Parque Lacerda Werneck · 9h30'], ['Encerramento', 'Salão Verde do Parque Lacerda Werneck · premiação da Corrida às 10h · premiação geral às 11h40 · shows']]],
   ];
 
 
