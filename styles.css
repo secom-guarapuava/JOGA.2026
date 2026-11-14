@@ -1681,3 +1681,58 @@ html.mdl-open{overflow:hidden}
 }
 .btn--yel{background:var(--yellow);color:#111;box-shadow:0 12px 24px rgba(0,0,0,.18)}
 .btn--yel:hover{background:#fff;color:#111;transform:translateY(-3px)}
+/* ============================================================
+   ATUALIZAÇÃO 14/11/2026 — Equipe Laranja campeã: seção #campea em laranja, "Em números", selo de resultado final
+   ============================================================ */
+.nav__cta--camp{background:var(--orange);color:#fff}
+.nav__cta--camp:hover{background:var(--yellow);color:#111}
+.campea{position:relative;overflow:hidden;color:#fff;isolation:isolate;
+  background:radial-gradient(900px 640px at 72% 30%,#ffa04f 0%,#f0623f 32%,#E94E2C 52%,#a9321a 82%,#6e1d0c 100%)}
+.campea__rays{position:absolute;left:72%;top:32%;width:2800px;height:2800px;margin:-1400px;z-index:-1;pointer-events:none;
+  background:repeating-conic-gradient(from 0deg,rgba(255,232,190,.13) 0 6deg,transparent 6deg 15deg);animation:campeaSpin 80s linear infinite}
+@keyframes campeaSpin{to{transform:rotate(360deg)}}
+.campea__conf{position:absolute;inset:0;z-index:-1;pointer-events:none;overflow:hidden}
+.campea__conf i{position:absolute;top:-24px;border-radius:2px;opacity:.85;animation:campeaFall linear infinite}
+@keyframes campeaFall{0%{transform:translateY(0) rotate(0)}100%{transform:translateY(1400px) rotate(720deg)}}
+@media (prefers-reduced-motion:reduce){.campea__rays,.campea__conf i{animation:none}.campea__conf{display:none}}
+.campea__in{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+.campea__k{display:inline-flex;align-items:center;gap:10px;font-size:12.5px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;background:rgba(0,0,0,.24);padding:9px 16px;border-radius:999px}
+.campea .display{margin-top:18px}
+.campea__eq{display:block}
+.campea .lead{margin-top:22px}
+.campea__nums{display:flex;gap:14px;margin-top:26px;flex-wrap:wrap}
+.campea__nums div{background:rgba(11,16,48,.55);border:1.5px solid rgba(255,255,255,.25);border-radius:18px;padding:12px 22px 10px;min-width:120px}
+.campea__nums b{display:block;font-family:var(--fDisp);font-weight:400;font-size:clamp(40px,4.6vw,56px);line-height:1;color:var(--yellow)}
+.campea__nums span{font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.88)}
+.campea__tk{margin-top:26px;font-size:12.5px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:#ffe2cc}
+.campea__tit{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 0;padding:0}
+.campea__tit li{background:#fff;color:#8a2a12;border-radius:999px;padding:7px 14px;font-size:13.5px;font-weight:800;box-shadow:4px 4px 0 rgba(0,0,0,.18)}
+.campea__btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.campea__art{position:relative;min-height:500px}
+.campea__ph{position:absolute;right:0;top:10px;width:76%;height:470px;margin:0;border-radius:26px;overflow:hidden;transform:rotate(2.5deg);border:6px solid #fff;box-shadow:0 30px 60px rgba(0,0,0,.4)}
+.campea__ph img{width:100%;height:100%;object-fit:cover;display:block}
+.campea__ph figcaption{position:absolute;right:12px;bottom:12px;background:rgba(11,16,48,.82);color:#fff;font-size:12px;font-weight:800;padding:6px 12px;border-radius:999px}
+.campea__logo{position:absolute;left:-2%;bottom:0;width:44%;filter:drop-shadow(10px 12px 0 rgba(0,0,0,.3));transform:rotate(-6deg)}
+.campea__trof{position:absolute;left:2%;top:0;width:30%;transform:rotate(-8deg);filter:drop-shadow(0 0 30px rgba(255,220,120,.75)) drop-shadow(8px 10px 0 rgba(0,0,0,.3));animation:campeaFloat 4s ease-in-out infinite}
+.campea__trofsvg{width:100%;height:auto;display:block}
+@keyframes campeaFloat{50%{transform:rotate(-5deg) translateY(-10px)}}
+.podio{list-style:none;display:flex;align-items:flex-end;justify-content:center;gap:14px;max-width:720px;margin:56px auto 0;padding:0}
+.podio__i{flex:1;display:flex;flex-direction:column;align-items:center;gap:6px;background:rgba(11,16,48,.72);border-top:8px solid var(--c);border-radius:18px 18px 6px 6px;padding:18px 10px}
+.podio__i--1{height:210px;background:rgba(11,16,48,.88);box-shadow:0 0 0 3px var(--yellow),0 20px 40px rgba(0,0,0,.3)}
+.podio__i--2{height:168px}.podio__i--3{height:138px}
+.podio__p{font-family:var(--fDisp);font-size:40px;line-height:1;color:var(--yellow)}
+.podio__i b{font-family:var(--fDisp);font-weight:400;font-size:clamp(22px,3vw,32px);text-transform:uppercase;line-height:1}
+.podio__i em{font-style:normal;font-size:13px;font-weight:800;color:rgba(255,255,255,.82)}
+@media(max-width:880px){
+  .campea__in{grid-template-columns:1fr;gap:28px}
+  .campea__art{min-height:400px;max-width:460px;width:100%;margin:0 auto}
+  .campea__ph{height:370px}
+  .podio{gap:8px;margin-top:36px}.podio__i--1{height:170px}.podio__i--2{height:140px}.podio__i--3{height:118px}
+}
+.nums{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;position:relative;z-index:1}
+.num{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-left:8px solid var(--c);border-radius:22px;padding:22px 24px 20px}
+.num b{display:block;font-family:var(--fDisp);font-weight:400;font-size:clamp(44px,5vw,70px);line-height:1;color:var(--c)}
+.num span{display:block;font-family:var(--fDisp);text-transform:uppercase;font-size:clamp(20px,2.2vw,26px);line-height:1.1;margin-top:8px;color:#fff}
+.num small{display:block;font-size:13.5px;line-height:1.4;color:rgba(255,255,255,.75);margin-top:6px}
+@media(max-width:880px){.nums{grid-template-columns:repeat(2,1fr);gap:12px}.num{padding:16px 16px 14px}}
+.live.is-final .live__dot{animation:none;background:var(--orange);box-shadow:0 0 0 4px rgba(233,78,44,.25)}

@@ -16,7 +16,8 @@
    'artigo' (o/a) é usado na legenda do Instagram ("a Equipe X venceu a Noite Cultural").
    ===================================================================== */
 const PLACAR = {
-  atualizado: '13/11, 20h',
+  atualizado: '14/11',
+  final: true,   // JOGA encerrado: textos de resultado final (campeã) no card do líder, no selo e na barra fixa
   resultados: [
     {
       titulo: 'Noite Cultural', artigo: 'a',
@@ -286,6 +287,68 @@ const PLACAR = {
       pontos: { azul: 0, verde: -13, amarela: -3, branca: -24, preta: -10, laranja: -16 },
       notas: { azul: 'sem desconto' },
       obs: '33 recursos julgados em duas reuniões, com os coordenadores de todas as equipes. Cada caso foi decidido por uma comissão de três representantes sorteados entre as equipes não envolvidas. Por respeito às pessoas envolvidas, os casos não são divulgados.'
+    },
+    {
+      titulo: 'Futebol 7', artigo: 'o',
+      sub: 'Geral · Masculino',
+      data: '13/11', local: 'Arena Max Atacadista (Campo sintético da Polícia Militar)',
+      tabela: 'geral',
+      colocacao: [
+        { eq: 'verde' }, { eq: 'preta' }, { eq: 'laranja' }, { eq: 'amarela' }, { eq: 'azul' }, { eq: 'branca' }
+      ]
+    },
+    {
+      titulo: 'Futebol 7', artigo: 'o',
+      sub: 'Veteranos · Masculino',
+      data: '13/11', local: 'Arena Max Atacadista (Campo sintético da Polícia Militar)',
+      tabela: 'geral',
+      colocacao: [
+        { eq: 'laranja' }, { eq: 'verde' }, { eq: 'branca' }, { eq: 'preta' }, { eq: 'azul' }
+      ],
+      obs: 'A Equipe Amarela não se inscreveu nos Veteranos.'
+    },
+    {
+      titulo: 'Futsal Feminino', artigo: 'o',
+      sub: 'Feminino',
+      data: '13/11', local: 'Arena Consulta Já (Ginásio Santa Teresinha)',
+      tabela: 'geral',
+      colocacao: [
+        { eq: 'laranja' }, { eq: 'verde' }, { eq: 'amarela' }, { eq: 'branca' }, { eq: 'preta' }, { eq: 'azul' }
+      ]
+    },
+    {
+      titulo: 'Corrida de Rua', artigo: 'a',
+      sub: 'Misto · pontuação da prova',
+      data: '14/11', local: 'Parque Lacerda Werneck',
+      pontos: { azul: 34, amarela: 33, preta: 31, branca: 28, verde: 28, laranja: 26 }
+    },
+    {
+      titulo: 'Corrida de Rua · participação', artigo: 'a',
+      sub: '30 inscritos concluindo a prova',
+      data: '14/11', local: 'Parque Lacerda Werneck',
+      pontos: { azul: 10, laranja: 10 },
+      obs: 'Azul e Laranja garantiram os 10 pontos de participação da Corrida.'
+    },
+    {
+      titulo: 'Caminhada', artigo: 'a',
+      sub: 'Participação',
+      data: '14/11', local: 'Parque Lacerda Werneck',
+      pontos: { azul: 10, verde: 10, amarela: 10, branca: 10, preta: 10, laranja: 10 },
+      obs: 'As seis equipes somaram os 10 pontos da Caminhada.'
+    },
+    {
+      titulo: 'Participação em todas as modalidades', artigo: 'a',
+      sub: 'Bônus do regulamento',
+      data: '14/11', local: 'JOGA 2026',
+      pontos: { azul: 5, laranja: 5 },
+      obs: 'Azul e Laranja tiveram atletas em todas as modalidades do JOGA 2026.'
+    },
+    {
+      titulo: 'Ajuste da Coordenação Disciplinar', artigo: 'o',
+      sub: 'Desconto homologado',
+      data: '14/11', local: 'Coordenação Disciplinar',
+      pontos: { laranja: -3 },
+      obs: 'Por respeito às pessoas envolvidas, os casos não são divulgados.'
     }
   ]
 };
@@ -333,12 +396,12 @@ const PLACAR = {
       const lideres = T.filter(t => t.pos === 1); const L = lideres[0]; const ult = PLACAR.resultados[PLACAR.resultados.length - 1];
       const n = PLACAR.resultados.length;
       ld.querySelector('.leader__color').style.setProperty('--c', lideres.length > 1 ? `linear-gradient(135deg,${lideres.map(t => EQ[t.k].c).join(',')})` : EQ[L.k].c);
-      ld.querySelector('h3').textContent = lideres.length > 1 ? 'Empate na liderança' : `Equipe ${EQ[L.k].n} na frente`;
-      ld.querySelector('p').innerHTML = `Último resultado: <strong>${ult.titulo}</strong> (${ult.data}). ${n} ${n === 1 ? 'resultado computado' : 'resultados computados'} até agora.`;
+      ld.querySelector('h3').textContent = lideres.length > 1 ? 'Empate na liderança' : PLACAR.final ? `Equipe ${EQ[L.k].n} campeã do JOGA 2026` : `Equipe ${EQ[L.k].n} na frente`;
+      ld.querySelector('p').innerHTML = PLACAR.final ? `Classificação final, com <strong>${n} resultados</strong> computados entre 26/10 e 14/11, bônus e ajustes do regulamento.` : `Último resultado: <strong>${ult.titulo}</strong> (${ult.data}). ${n} ${n === 1 ? 'resultado computado' : 'resultados computados'} até agora.`;
       ld.querySelector('.leader__big').innerHTML = `${fmt(L.pts)}<span>pts</span>`;
     }
     const at = document.getElementById('placarAtualizado');
-    if (at) at.textContent = `AO VIVO · ATUALIZADO EM ${PLACAR.atualizado.toUpperCase()}`;
+    if (at) at.textContent = PLACAR.final ? `RESULTADO FINAL · ${PLACAR.atualizado}` : `AO VIVO · ATUALIZADO EM ${PLACAR.atualizado.toUpperCase()}`;
 
     const lst = document.getElementById('placarResultados');
     if (lst) lst.innerHTML = linhas.slice().reverse().map(({ r }) => {
@@ -361,6 +424,11 @@ const PLACAR = {
     bar.querySelector('.lbar__n').textContent = nome;
     bar.querySelector('.lbar__p').textContent = `${fmt(L.pts)} pts`;
     bar.setAttribute('aria-label', `Placar geral: ${nome} em 1º, com ${fmt(L.pts)} pontos. Clique para conferir os resultados.`);
+    if (PLACAR.final) {
+      bar.querySelector('.lbar__t small').textContent = 'Campeã do JOGA 2026';
+      const go = bar.querySelector('.lbar__go'); if (go && go.firstChild) go.firstChild.textContent = 'Ver a classificação final';
+      bar.setAttribute('aria-label', `${nome}, campeã do JOGA 2026, com ${fmt(L.pts)} pontos. Clique para ver a classificação final.`);
+    }
     const sec = document.getElementById('placares'), ft = document.querySelector('footer');
     const upd = () => {
       const vh = window.innerHeight, r = sec ? sec.getBoundingClientRect() : null;
