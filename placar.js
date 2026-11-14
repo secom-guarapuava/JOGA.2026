@@ -16,7 +16,7 @@
    'artigo' (o/a) é usado na legenda do Instagram ("a Equipe X venceu a Noite Cultural").
    ===================================================================== */
 const PLACAR = {
-  atualizado: '13/11, 16h',
+  atualizado: '13/11, 20h',
   resultados: [
     {
       titulo: 'Noite Cultural', artigo: 'a',
@@ -277,6 +277,15 @@ const PLACAR = {
       data: '26/10 a 12/11', local: 'Hemocentro',
       pontos: { amarela: 24, laranja: 24, verde: 24, azul: 22, branca: 22, preta: 16 },
       obs: 'Foram 78 doações durante o JOGA. Cada doação pode salvar até 4 vidas: o JOGA vai ajudar cerca de 312 pessoas.'
+    },
+    {
+      titulo: 'Julgamento dos recursos', artigo: 'o',
+      sub: 'Descontos homologados pela Coordenação Disciplinar',
+      data: '9 e 13/11', local: 'Relatórios 01 e 02',
+      fixa: true,
+      pontos: { azul: 0, verde: -13, amarela: -3, branca: -24, preta: -10, laranja: -16 },
+      notas: { azul: 'sem desconto' },
+      obs: '33 recursos julgados em duas reuniões, com os coordenadores de todas as equipes. Cada caso foi decidido por uma comissão de três representantes sorteados entre as equipes não envolvidas. Por respeito às pessoas envolvidas, os casos não são divulgados.'
     }
   ]
 };
@@ -335,7 +344,7 @@ const PLACAR = {
     if (lst) lst.innerHTML = linhas.slice().reverse().map(({ r }) => {
       const extra = (r.colocacao && r.pontos) ? Object.keys(r.pontos).map(k => `<li class="res__x"><span class="res__pos">·</span><span class="res__eq">${chip(k)} ${EQ[k].n}</span><span class="res__nota"><small>${(r.rotulo && r.rotulo[k]) || ''}</small></span><span class="res__pts">${sinal(r.pontos[k])}</span></li>`).join('') : '';
       const corpo = r.colocacao ? r.colocacao.map((c, i) => `<li><span class="res__pos">${i + 1}º</span><span class="res__eq">${chip(c.eq)} ${EQ[c.eq].n}</span>${c.nota ? `<span class="res__nota">${r.unidade ? `${c.nota} <small>${r.unidade}</small>` : `<small>nota</small> ${c.nota}`}</span>` : '<span></span>'}<span class="res__pts">${sinal(c.pontos !== undefined ? c.pontos : (TABELAS[r.tabela || 'geral'][i] || 0))}</span></li>`).join('')
-        : Object.keys(r.pontos).sort((a, b) => r.pontos[b] - r.pontos[a]).map(k => `<li><span class="res__pos">·</span><span class="res__eq">${chip(k)} ${EQ[k].n}</span>${r.notas && r.notas[k] ? `<span class="res__nota">${r.notas[k]}</span>` : '<span></span>'}<span class="res__pts">${sinal(r.pontos[k])}</span></li>`).join('');
+        : Object.keys(r.pontos).sort((a, b) => r.fixa ? 0 : r.pontos[b] - r.pontos[a]).map(k => `<li><span class="res__pos">·</span><span class="res__eq">${chip(k)} ${EQ[k].n}</span>${r.notas && r.notas[k] ? `<span class="res__nota">${r.notas[k]}</span>` : '<span></span>'}<span class="res__pts">${sinal(r.pontos[k])}</span></li>`).join('');
       return `<article class="res">
         <header class="res__h"><div><h4>${r.titulo}</h4>${r.sub ? `<p>${r.sub}</p>` : ''}</div><span class="res__d">${r.data}${r.local ? ' · ' + r.local : ''}</span></header>
         <ol class="res__l">${corpo}${extra}</ol>${r.obs ? `<p class="res__o">${r.obs}</p>` : ''}</article>`;
