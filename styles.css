@@ -1737,3 +1737,11 @@ html.mdl-open{overflow:hidden}
 .num small{display:block;font-size:13.5px;line-height:1.4;color:rgba(255,255,255,.75);margin-top:6px}
 @media(max-width:880px){.nums{grid-template-columns:repeat(2,1fr);gap:12px}.num{padding:16px 16px 14px}}
 .live.is-final .live__dot{animation:none;background:var(--orange);box-shadow:0 0 0 4px rgba(233,78,44,.25)}
+/* ============================================================
+   ATUALIZAÇÃO 14/11/2026 — galeria da Corrida e do Encerramento
+   ============================================================ */
+.gal__t{display:flex;align-items:center;gap:14px;margin:0 0 16px;font-family:var(--fDisp);font-weight:400;font-size:clamp(24px,2.8vw,34px);line-height:1;text-transform:uppercase;color:#111}
+.gal__t span{font-family:var(--fBody);font-weight:800;font-size:13px;letter-spacing:.14em;background:#111;color:var(--yellow);border-radius:999px;padding:7px 12px 6px;white-space:nowrap;flex:none}
+@media(max-width:680px){.gal__t{flex-wrap:wrap;gap:8px 12px}}
+.gal + .gal__hint + .gal__t,.gal + .gal__t{margin-top:44px}
+.fotos .lead b{color:#111}
