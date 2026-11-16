@@ -43,6 +43,7 @@
     </a>
     <nav class="nav__links" aria-label="Navegação principal">
       <a href="#campea">Campeã</a>
+      <a href="#video">Vídeo</a>
       <a href="#fotos">Fotos</a>
       <a href="#placares">Placar</a>
       <a href="#programacao">Em números</a>
@@ -61,6 +62,8 @@
   </div>
   <div class="nav__mobile" id="navMobile">
     <a href="#campea">Equipe Laranja campeã</a>
+    <a href="#video">Vídeo do Encerramento</a>
+    <a href="#homenagem">Homenagem</a>
     <a href="#fotos">Fotos</a>
     <a href="#placares">Placar</a>
     <a href="#programacao">Em números</a>
@@ -243,6 +246,68 @@
   </ol></div>
 </section>
 
+<!-- ========================== VÍDEO DO ENCERRAMENTO 2026 ========================== -->
+<section class="videoSec section" id="video">
+  <div class="container">
+    <div class="section__head reveal">
+      <p class="eyebrow">Vídeo oficial · 14.11</p>
+      <h2 class="display">Como foi o <span class="ink ink--y">JOGA 2026</span>.</h2>
+      <p class="lead">Três semanas de jogos, torcida e solidariedade em menos de três minutos. Assista ao vídeo do Encerramento e reviva o JOGA 2026.</p>
+    </div>
+
+    <div class="videoFrame reveal">
+      <div class="videoFrame__bezel">
+        <div class="videoFrame__screen" id="videoScreen" style="aspect-ratio:1792/768">
+          <iframe
+            src="https://player.vimeo.com/video/1247264988?autoplay=0&title=0&byline=0&portrait=0&dnt=1"
+            data-auto-ratio
+            title="JOGA 2026 — Vídeo do Encerramento"
+            allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+            allowfullscreen
+            loading="lazy"
+            referrerpolicy="strict-origin-when-cross-origin"></iframe>
+          <button class="videoPlay" aria-label="Reproduzir vídeo" id="videoPlay">
+            <svg viewBox="0 0 80 80" aria-hidden="true">
+              <circle cx="40" cy="40" r="38" fill="rgba(255,255,255,.96)"/>
+              <polygon points="32,24 60,40 32,56" fill="#111"/>
+            </svg>
+            <span>ASSISTIR · 2:44</span>
+          </button>
+        </div>
+      </div>
+      <div class="videoFrame__caption">
+        <span class="dot dot--g"></span><span class="dot dot--b"></span><span class="dot dot--y"></span>
+        <p>JOGA 2026 · Vídeo do Encerramento · Secretaria Municipal de Comunicação</p>
+      </div>
+      <p class="videoNote">Quer relembrar a edição passada? <a href="https://vimeo.com/1208768810" target="_blank" rel="noopener">Assista ao vídeo do JOGA 2025</a>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========================== HOMENAGEM (in memoriam) ========================== -->
+<section class="hom section" id="homenagem" aria-labelledby="homTitle">
+  <div class="container hom__in">
+    <div class="hom__copy">
+      <svg class="hom__fita" viewBox="0 0 120 170" aria-hidden="true"><defs><linearGradient id="fitaG" x1="0" x2="1"><stop offset="0" stop-color="#2a2a2e"/><stop offset=".5" stop-color="#0b0b0e"/><stop offset="1" stop-color="#26262a"/></linearGradient></defs>
+<path d="M60 58C42 40 22 20 32 8c9-10 24 2 28 18 4-16 19-28 28-18 10 12-10 32-28 50z" fill="url(#fitaG)" stroke="rgba(255,255,255,.35)" stroke-width="2"/>
+<path d="M56 56 22 160l20-8 12 16 14-108zM64 56l34 104-20-8-12 16-14-108z" fill="url(#fitaG)" stroke="rgba(255,255,255,.35)" stroke-width="2" stroke-linejoin="round"/>
+<circle cx="60" cy="56" r="9" fill="#111" stroke="rgba(255,255,255,.4)" stroke-width="2"/></svg>
+      <p class="hom__k">Homenagem · In memoriam</p>
+      <h2 class="hom__t" id="homTitle">Rafael Markus</h2>
+      <p class="hom__r">Secretário Municipal de Comunicação</p>
+      <p class="hom__p">Nos primeiros dias do JOGA 2026, nos despedimos do Secretário Rafael Markus. Os Jogos seguiram, e cada equipe que entrou em campo levou junto a lembrança de quem dedicou o seu trabalho à comunicação de Guarapuava.</p>
+      <p class="hom__p">Este vídeo é a homenagem dos servidores e de toda a Prefeitura.</p>
+    </div>
+    <div class="hom__video">
+      <div class="hom__screen" style="aspect-ratio:16/9">
+        <iframe src="https://player.vimeo.com/video/1247264989?autoplay=0&title=0&byline=0&portrait=0&dnt=1" data-auto-ratio
+          title="Homenagem ao Secretário Rafael Markus" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+          allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ========================== EM NÚMEROS (antiga programação) ========================== -->
 <section class="talkSec destaques section" id="programacao">
   <div class="container">
@@ -378,7 +443,7 @@
     </div>
 
     <!-- Resultados que já contam pontos (montados pelo placar.js) -->
-    <div class="resWrap reveal">
+    <div class="resWrap">
       <h3 class="resWrap__t">Resultados que já valem pontos</h3>
       <div class="resList" id="placarResultados"><article class="res">
         <header class="res__h"><div><h4>Ajuste da Coordenação Disciplinar</h4><p>Desconto homologado</p></div><span class="res__d">14/11 · Coordenação Disciplinar</span></header>
@@ -887,42 +952,6 @@
   </div>
 </section>
 
-<!-- ========================== VÍDEO 2025 ========================== -->
-<section class="videoSec section" id="video">
-  <div class="container">
-    <div class="section__head reveal">
-      <p class="eyebrow">Retrospectiva</p>
-      <h2 class="display">Como foi o <span class="ink ink--y">JOGA 2025</span>.</h2>
-      <p class="lead">Reveja a emoção, a vibração e o orgulho que tomaram conta de Guarapuava na última edição.</p>
-    </div>
-
-    <div class="videoFrame reveal">
-      <div class="videoFrame__bezel">
-        <div class="videoFrame__screen" id="videoScreen">
-          <iframe
-            src="https://player.vimeo.com/video/1208768810?autoplay=0&title=0&byline=0&portrait=0"
-            title="JOGA 2025 — Retrospectiva oficial"
-            allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
-            allowfullscreen
-            loading="lazy"
-            referrerpolicy="strict-origin-when-cross-origin"></iframe>
-          <button class="videoPlay" aria-label="Reproduzir vídeo" id="videoPlay">
-            <svg viewBox="0 0 80 80" aria-hidden="true">
-              <circle cx="40" cy="40" r="38" fill="rgba(255,255,255,.96)"/>
-              <polygon points="32,24 60,40 32,56" fill="#111"/>
-            </svg>
-            <span>ASSISTIR · 2:27</span>
-          </button>
-        </div>
-      </div>
-      <div class="videoFrame__caption">
-        <span class="dot dot--g"></span><span class="dot dot--b"></span><span class="dot dot--y"></span>
-        <p>JOGA 2025 · Vídeo oficial · Secretaria Municipal de Comunicação</p>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ========================== APOIADORES ========================== -->
 <section class="apoio section" id="apoiadores" aria-labelledby="apoioTitle">
   <div class="container">
@@ -984,7 +1013,8 @@
       <a href="#regulamento">Regulamento</a>
       <a href="#duvidas">Dúvidas</a>
       <a href="#placares">Placares</a>
-      <a href="#video">JOGA 2025</a>
+      <a href="#video">Vídeo do Encerramento</a>
+      <a href="#homenagem">Homenagem a Rafael Markus</a>
       <a href="#apoiadores">Apoiadores</a>
       <a href="https://www.instagram.com/joga26_pref/" target="_blank" rel="noopener">Instagram @joga26_pref</a>
       <a href="https://chat.whatsapp.com/GyE0cGUtcu2523b2oBeTil" target="_blank" rel="noopener">Grupo do JOGA no WhatsApp</a>
@@ -1013,5 +1043,37 @@
 <script src="script.js"></script>
 <script src="modalidades.js"></script>
 <script src="placar.js"></script>
+<script>
+/* 16/11: (1) blocos muito altos com .reveal (mais de 2,5 telas) aparecem direto: o observer do script.js (threshold .12) não os revelava no celular;
+   (2) proporção real dos vídeos do Vimeo (getVideoWidth/Height via postMessage). */
+(() => {
+  const fix = () => document.querySelectorAll('.reveal:not(.is-in)').forEach(e => { if (e.offsetHeight > innerHeight * 2.5) e.classList.add('is-in'); });
+  // lista de resultados: mostra os 6 mais recentes e um botão para ver todos (eram 35 cards, quase 17 mil px no celular)
+  const rl = document.getElementById('placarResultados');
+  if (rl && rl.children.length > 6) {
+    rl.classList.add('is-collapsed');
+    const bt = document.createElement('button'); bt.type = 'button'; bt.className = 'btn btn--outline resMore';
+    const n = rl.children.length; bt.textContent = `Ver todos os ${n} resultados`;
+    bt.addEventListener('click', () => { const c = rl.classList.toggle('is-collapsed'); bt.textContent = c ? `Ver todos os ${n} resultados` : 'Mostrar menos';
+      if (c) rl.scrollIntoView({ behavior: 'smooth', block: 'start' }); });
+    rl.after(bt);
+  }
+  fix(); addEventListener('load', fix); addEventListener('resize', fix);
+  const frames = [...document.querySelectorAll('iframe[data-auto-ratio]')]; if (!frames.length) return;
+  const st = new Map();
+  const ask = f => { try { ['getVideoWidth', 'getVideoHeight'].forEach(m => f.contentWindow.postMessage(JSON.stringify({ method: m }), 'https://player.vimeo.com')); } catch (_) {} };
+  addEventListener('message', e => {
+    if (e.origin !== 'https://player.vimeo.com') return;
+    let d = e.data; if (typeof d === 'string') { try { d = JSON.parse(d); } catch (_) { return; } }
+    const f = frames.find(x => x.contentWindow === e.source); if (!f || !d) return;
+    if (d.event === 'ready') ask(f);
+    if (d.method === 'getVideoWidth' || d.method === 'getVideoHeight') {
+      const o = st.get(f) || {}; o[d.method] = +d.value; st.set(f, o);
+      if (o.getVideoWidth > 0 && o.getVideoHeight > 0) f.parentElement.style.aspectRatio = o.getVideoWidth + ' / ' + o.getVideoHeight;
+    }
+  });
+  frames.forEach(f => f.addEventListener('load', () => { ask(f); setTimeout(() => ask(f), 1500); }));
+})();
+</script>
 </body>
 </html>
